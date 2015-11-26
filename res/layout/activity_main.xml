@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+    <!-- 这个决定你的导航是否在上或者下 -->
+
+    <FrameLayout
+        android:id="@+id/tab_fa_maincontent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+    </FrameLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_weight="0"
+        android:background="#cdcdcd"
+        android:scaleType="fitXY" />
+    <!-- 这个就是底部导航了 -->
+
+    <android.support.v4.app.FragmentTabHost
+        android:id="@+id/tab_fa_fth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_bottom_bg" >
+
+    </android.support.v4.app.FragmentTabHost>
+
+</LinearLayout>

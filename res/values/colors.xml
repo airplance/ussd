@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="main_top_bg">#09a0f8</color>
+    <color name="main_bottom_bg">#ffffff</color>
+    <color name="layout_press_down">#ff6d00</color>
+    <color name="layout_press_up">#ffffff</color>
+    <color name="default_white">#ffffff</color>
+    <color name="default_black">#000000</color>
+    <color name="default_orange">#FFA500</color>
+    <color name="default_red">#FF0000</color>
+    <color name="default_purple">#800080</color>
+    <color name="default_blue">#0000FF</color>
+    <color name="default_gray">#808080</color>
+
+    <!-- home -->
+    <color name="home_scroll_bg">#345678</color>
+    <color name="home_txt_color">#000</color>
+    
+</resources>
