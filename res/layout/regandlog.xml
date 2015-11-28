@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:criview="http://schemas.android.com/apk/res/com.online.hall"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/regandlog_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.15" >
+    </android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.15"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" >
+
+            <com.hall.view.CriButton
+                android:id="@+id/regandlog_reg"
+                style="@null"
+                criview:style="FILL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:text="注册"
+                android:textColor="@color/default_white"
+                android:textSize="17sp"
+                criview:borderColor="@color/default_blue"
+                criview:corder="10" />
+
+            <com.hall.view.CriButton
+                android:id="@+id/regandlog_log"
+                criview:style="FILL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:text="登录"
+                android:textColor="@color/default_blue"
+                android:textSize="17sp"
+                criview:borderColor="@color/default_gray"
+                criview:corder="10" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

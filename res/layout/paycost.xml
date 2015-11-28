@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:criview="http://schemas.android.com/apk/res/com.online.hall"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+    <com.hall.view.TopLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </com.hall.view.TopLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0.1dp"
+        android:background="#fff"
+        android:orientation="vertical"
+        android:paddingBottom="20dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="本机充值"
+                android:textColor="@color/default_blue"
+                android:textSize="19sp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/textView1"
+                android:background="@color/default_blue"
+                android:text="TextView" />
+
+            <LinearLayout
+                android:id="@+id/layout01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView2"
+                android:orientation="vertical"
+                android:padding="10dp" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left|center_vertical"
+                        android:padding="5dp"
+                        android:text="充值卡密码："
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/textView3"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@+id/textView3"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/textView3"
+                        android:background="@color/default_blue" >
+
+                        <EditText
+                            android:id="@+id/editText1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="0.5dp"
+                            android:layout_weight="1"
+                            android:background="@color/default_white"
+                            android:ems="10"
+                            android:hint="ase sdf 是大法官"
+                            android:padding="5dp"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/TextView01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left|center_vertical"
+                        android:padding="5dp"
+                        android:text="充值卡密码："
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/TextView01"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@+id/TextView01"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/TextView01"
+                        android:background="@color/default_blue" >
+
+                        <EditText
+                            android:id="@+id/EditText01"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="0.5dp"
+                            android:layout_weight="1"
+                            android:background="@color/default_white"
+                            android:ems="10"
+                            android:hint="密码"
+                            android:padding="5dp"
+                            android:textSize="13sp" >
+
+                        </EditText>
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp" >
+
+            <TextView
+                android:id="@+id/TextView03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="本机充值"
+                android:textColor="@color/default_blue"
+                android:textSize="19sp" />
+
+            <TextView
+                android:id="@+id/TextView02"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/TextView03"
+                android:background="@color/default_blue"
+                android:text="TextView" />
+
+            <LinearLayout
+                android:id="@+id/LinearLayout01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/TextView02"
+                android:orientation="vertical"
+                android:padding="10dp" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/TextView04"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left|center_vertical"
+                        android:padding="5dp"
+                        android:text="充值卡密码："
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/TextView04"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@+id/TextView04"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/TextView04"
+                        android:background="@color/default_blue" >
+
+                        <EditText
+                            android:id="@+id/EditText02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="0.5dp"
+                            android:layout_weight="1"
+                            android:background="@color/default_white"
+                            android:ems="10"
+                            android:hint="ase sdf 是大法官"
+                            android:padding="5dp"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/TextView05"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left|center_vertical"
+                        android:padding="5dp"
+                        android:text="充值卡密码："
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/TextView05"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@+id/TextView05"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/TextView05"
+                        android:background="@color/default_blue" >
+
+                        <EditText
+                            android:id="@+id/EditText03"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="0.5dp"
+                            android:layout_weight="1"
+                            android:background="@color/default_white"
+                            android:ems="10"
+                            android:hint="密码"
+                            android:padding="5dp"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <com.hall.view.CriButton
+            android:id="@+id/button1"
+            criview:style="FILL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@null"
+            android:padding="8dp"
+            android:text="立即充值"
+            android:textColor="#fff"
+            android:textSize="17sp"
+            criview:borderColor="@color/default_blue" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:criview="http://schemas.android.com/apk/res/com.online.hall"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_gray"
+    android:orientation="vertical" >
+
+    <com.hall.view.TopLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </com.hall.view.TopLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f5f5f5" >
+
+        <LinearLayout
+            android:id="@+id/regist_center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/default_gray"
+            android:orientation="vertical"
+            android:padding="1dp" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/default_white"
+                    android:padding="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/login_phone" />
+
+                <EditText
+                    android:id="@+id/editText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/imageView2"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/imageView2"
+                    android:layout_toRightOf="@+id/imageView2"
+                    android:background="@color/default_white"
+                    android:ems="10"
+                    android:hint="手机号码"
+                    android:paddingLeft="8dp"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp" >
+
+                <ImageView
+                    android:id="@+id/ImageView01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/default_white"
+                    android:padding="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/login_passwd" />
+
+                <EditText
+                    android:id="@+id/EditText01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/ImageView01"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/ImageView01"
+                    android:layout_toRightOf="@+id/ImageView01"
+                    android:background="@color/default_white"
+                    android:ems="10"
+                    android:hint="6-15位字母加数字"
+                    android:paddingLeft="8dp"
+                    android:textSize="13sp" >
+
+                </EditText>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/login_findpass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/regist_center"
+            android:layout_below="@+id/regist_center"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:text="忘记密码" />
+
+        <com.hall.view.CriButton
+            android:id="@+id/login_ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/regist_center"
+            android:layout_alignRight="@+id/regist_center"
+            android:layout_below="@+id/login_findpass"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@null"
+            android:padding="8dp"
+            android:text="登录"
+            android:textColor="@color/default_white"
+            android:textSize="17sp"
+            criview:borderColor="@color/default_blue"
+            criview:corder="10" />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,27 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:criview="http://schemas.android.com/apk/res/com.online.hall"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="0.5dp"
     android:layout_marginRight="0.5dp"
     android:background="#fff"
     android:orientation="vertical" >
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:background="@color/main_top_bg"
-        android:gravity="top" >
-
-        <TextView
-            android:id="@+id/tab_item_fragment_text"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"
-            android:gravity="center"
-            android:text="天天营业厅" />
-
-    </RelativeLayout>
 
     <ScrollView
         android:id="@+id/scrollView1"
@@ -31,8 +16,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#f0f0f0"
+            android:background="@color/default_gray"
             android:orientation="vertical" >
+
+            <com.hall.view.TopLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </com.hall.view.TopLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -43,7 +33,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="130dp"
                     android:scaleType="fitXY"
-                    android:src="@drawable/app_icon" />
+                    android:src="@drawable/home_banner_top" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -67,7 +57,7 @@
                         android:orientation="vertical" >
 
                         <ImageView
-                            android:id="@+id/imageView2"
+                            android:id="@+id/line1"
                             android:layout_width="wrap_content"
                             android:layout_height="fill_parent"
                             android:layout_gravity="center"
@@ -84,7 +74,6 @@
                             android:text="充值"
                             android:textColor="@color/home_txt_color"
                             android:textSize="14sp" />
-
                     </LinearLayout>
 
                     <LinearLayout
@@ -112,7 +101,6 @@
                             android:text="查询"
                             android:textColor="@color/home_txt_color"
                             android:textSize="14sp" />
-
                     </LinearLayout>
 
                     <LinearLayout
@@ -128,7 +116,7 @@
                             android:layout_height="fill_parent"
                             android:layout_gravity="center"
                             android:layout_weight="0.45"
-                            android:src="@drawable/home_flow" />
+                            android:src="@drawable/home_package" />
 
                         <TextView
                             android:id="@+id/TextView02"
@@ -140,7 +128,6 @@
                             android:text="套餐"
                             android:textColor="@color/home_txt_color"
                             android:textSize="14sp" />
-
                     </LinearLayout>
 
                     <LinearLayout
@@ -168,11 +155,8 @@
                             android:text="其他"
                             android:textColor="@color/home_txt_color"
                             android:textSize="14sp" />
-
                     </LinearLayout>
-
                 </LinearLayout>
-
             </RelativeLayout>
 
             <LinearLayout
@@ -182,8 +166,8 @@
                 android:background="#fff"
                 android:orientation="horizontal"
                 android:paddingBottom="10dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
                 android:paddingTop="10dp" >
 
                 <LinearLayout
@@ -201,18 +185,17 @@
                         android:gravity="center_vertical"
                         android:text="尊敬的用户,您好"
                         android:textColor="@color/home_txt_color"
-                        android:textSize="11sp" />
+                        android:textSize="13sp" />
 
                     <TextView
-                        android:id="@+id/TextView04"
+                        android:id="@+id/packnet_list1_txt"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
-                        android:text="本月话费：12.35元"
+                        android:text="本月话费：12.5元"
                         android:textColor="@color/home_txt_color"
-                        android:textSize="11sp" />
-
+                        android:textSize="13sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -230,7 +213,7 @@
                         android:gravity="center_vertical"
                         android:text="剩余流量：32.2M"
                         android:textColor="@color/home_txt_color"
-                        android:textSize="11sp" />
+                        android:textSize="13sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -242,28 +225,27 @@
                             android:id="@+id/textView3"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="0.4"
+                            android:layout_weight="0.35"
                             android:gravity="center_vertical"
-                            android:text="当前余额：25.32元"
+                            android:text="当前余额：25.3元"
                             android:textColor="@color/home_txt_color"
-                            android:textSize="11sp" />
+                            android:textSize="13sp" />
 
-                        <Button
+                        <com.hall.view.CriButton
                             android:id="@+id/button1"
-                            style="@null"
+                            criview:style="FILL"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:background="#222"
                             android:gravity="center"
+                            android:padding="2dp"
                             android:text="去充值"
-                            android:textColor="#fff"
-                            android:textSize="10sp" />
-
+                            android:textColor="@color/default_white"
+                            android:textSize="10sp"
+                            criview:borderColor="#19ed13"
+                            criview:corder="10" />
                     </LinearLayout>
-
                 </LinearLayout>
-
             </LinearLayout>
 
             <RelativeLayout
@@ -298,6 +280,7 @@
                         android:orientation="horizontal" >
 
                         <RelativeLayout
+                            android:id="@+id/home_center_goodpack"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -314,10 +297,10 @@
                                 android:text="优惠套餐"
                                 android:textColor="@color/home_txt_color"
                                 android:textSize="17sp" />
-
                         </RelativeLayout>
 
                         <RelativeLayout
+                            android:id="@+id/home_center_4gserver"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginLeft="0.5dp"
@@ -330,14 +313,12 @@
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
                                 android:layout_gravity="center"
-                                android:drawableLeft="@drawable/home_left_one"
+                                android:drawableLeft="@drawable/home_left_two"
                                 android:gravity="center"
-                                android:text="优惠套餐"
+                                android:text=" 4 G 服务"
                                 android:textColor="@color/home_txt_color"
                                 android:textSize="17sp" />
-
                         </RelativeLayout>
-
                     </LinearLayout>
 
                     <LinearLayout
@@ -349,6 +330,7 @@
                         android:orientation="horizontal" >
 
                         <RelativeLayout
+                            android:id="@+id/home_center_checkkno"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginTop="0.5dp"
@@ -361,15 +343,15 @@
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
                                 android:layout_gravity="center"
-                                android:drawableLeft="@drawable/home_left_one"
+                                android:drawableLeft="@drawable/home_left_three"
                                 android:gravity="center"
-                                android:text="优惠套餐"
+                                android:text="查询功能"
                                 android:textColor="@color/home_txt_color"
                                 android:textSize="17sp" />
-
                         </RelativeLayout>
 
                         <RelativeLayout
+                            android:id="@+id/home_center_bunisopen"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginLeft="0.5dp"
@@ -383,18 +365,14 @@
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
                                 android:layout_gravity="center"
-                                android:drawableLeft="@drawable/home_left_one"
+                                android:drawableLeft="@drawable/home_left_four"
                                 android:gravity="center"
-                                android:text="优惠套餐"
+                                android:text="业务开通"
                                 android:textColor="@color/home_txt_color"
                                 android:textSize="17sp" />
-
                         </RelativeLayout>
-
                     </LinearLayout>
-
                 </LinearLayout>
-
             </RelativeLayout>
 
             <ImageView
@@ -403,8 +381,7 @@
                 android:layout_height="140dp"
                 android:layout_marginTop="10dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/app_icon" />
-
+                android:src="@drawable/home_banner_bottom" />
         </LinearLayout>
     </ScrollView>
 

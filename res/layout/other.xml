@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:criview="http://schemas.android.com/apk/res/com.online.hall"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+    <com.hall.view.TopLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </com.hall.view.TopLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#fff"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/layitem_line" />
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="8dp" >
+
+            <ImageView
+                android:id="@+id/ImageView02"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="8dp"
+                android:scaleType="center"
+                android:src="@drawable/check_layout_phone" />
+
+            <ImageView
+                android:id="@+id/ImageView01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/ImageView02"
+                android:layout_below="@+id/ImageView02"
+                android:scaleType="fitXY"
+                android:src="@drawable/layitem_line" />
+
+            <TextView
+                android:id="@+id/TextView01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ImageView02"
+                android:layout_alignTop="@+id/ImageView02"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/ImageView02"
+                android:gravity="center_vertical"
+                android:text="虚拟网6"
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+            <com.hall.view.CriButton
+                android:id="@+id/CriButton01"
+                criview:style="FILL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="开通"
+                android:textColor="@color/default_white"
+                criview:borderColor="@color/default_blue" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="8dp" >
+
+            <ImageView
+                android:id="@+id/ImageView04"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="8dp"
+                android:scaleType="center"
+                android:src="@drawable/check_layout_pack" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ImageView04"
+                android:scaleType="fitXY"
+                android:src="@drawable/layitem_line" />
+
+            <TextView
+                android:id="@+id/packnet_list1_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ImageView04"
+                android:layout_alignTop="@+id/ImageView04"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/ImageView04"
+                android:gravity="center_vertical"
+                android:text="上网流量15"
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+            <com.hall.view.CriButton
+                android:id="@+id/CriButton05"
+                criview:style="FILL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="开通"
+                android:textColor="@color/default_white"
+                criview:borderColor="@color/default_blue" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="8dp" >
+
+            <ImageView
+                android:id="@+id/ImageView06"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="8dp"
+                android:scaleType="center"
+                android:src="@drawable/check_layout_func" />
+
+            <TextView
+                android:id="@+id/TextView05"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ImageView06"
+                android:layout_alignTop="@+id/ImageView06"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/ImageView06"
+                android:gravity="center_vertical"
+                android:text="上网流量标准资费"
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+            <com.hall.view.CriButton
+                android:id="@+id/CriButton04"
+                criview:style="FILL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/TextView05"
+                android:layout_alignBottom="@+id/TextView05"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="查询"
+                android:textColor="@color/default_white"
+                criview:borderColor="@color/default_blue" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:scaleType="fitXY"
+            android:src="@drawable/layitem_line" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#fff"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/layitem_line" />
+
+        <RelativeLayout
+            android:id="@+id/my_item_layout_listcost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="8dp" >
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="8dp"
+                android:scaleType="center"
+                android:src="@drawable/check_layout_phone" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/imageView2"
+                android:layout_below="@+id/imageView2"
+                android:scaleType="fitXY"
+                android:src="@drawable/layitem_line" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageView2"
+                android:layout_alignTop="@+id/imageView2"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/imageView2"
+                android:gravity="center_vertical"
+                android:text="开机提醒"
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+            <CheckBox
+                style="@style/CustomCheckboxTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingRight="5dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/my_item_layout_package"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="8dp" >
+
+            <ImageView
+                android:id="@+id/ImageView03"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="8dp"
+                android:scaleType="center"
+                android:src="@drawable/check_layout_phone" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ImageView03"
+                android:scaleType="fitXY"
+                android:src="@drawable/layitem_line" />
+
+            <TextView
+                android:id="@+id/TextView02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ImageView03"
+                android:layout_alignTop="@+id/ImageView03"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/ImageView03"
+                android:gravity="center_vertical"
+                android:text="来电提醒"
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+            <CheckBox
+                style="@style/CustomCheckboxTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingRight="5dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/my_item_layout_pay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="8dp" >
+
+            <ImageView
+                android:id="@+id/ImageView05"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="8dp"
+                android:scaleType="center"
+                android:src="@drawable/check_layout_cost" />
+
+            <TextView
+                android:id="@+id/TextView03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ImageView05"
+                android:layout_alignTop="@+id/ImageView05"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/ImageView05"
+                android:gravity="center_vertical"
+                android:text="语言选择"
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/CriButton03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/TextView03"
+                android:layout_alignBottom="@+id/TextView03"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="中文"
+                android:textColor="@color/default_blue" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:scaleType="fitXY"
+            android:src="@drawable/layitem_line" />
+    </LinearLayout>
+
+</LinearLayout>

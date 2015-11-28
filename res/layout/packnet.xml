@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:criview="http://schemas.android.com/apk/res/com.online.hall"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+    <com.hall.view.TopLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </com.hall.view.TopLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:background="#fff"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="#fff" >
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="80dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/packnetlist_icon" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/imageView1"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/imageView1"
+                    android:layout_toRightOf="@+id/imageView1"
+                    android:background="#fff"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="bottom"
+                        android:text="中意通 全球通 上网语音套餐"
+                        android:textColor="#000"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/TextView01"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="bottom"
+                        android:text="适合用户：中意通 全球通"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75" >
+
+                        <TextView
+                            android:id="@+id/TextView02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="bottom|left"
+                            android:text="单位："
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/TextView03"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="bottom|left"
+                            android:text="欧元"
+                            android:textColor="@color/packnet_item_txt_pink"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@+id/imageView1"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/layitem_line" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/tishi"
+                    android:gravity="center_vertical"
+                    android:text="发布范围：中国 意大利"
+                    android:textSize="15sp" />
+
+                <com.hall.view.PackNetGridView
+                    android:id="@+id/packnet_grid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/textView2"
+                    android:layout_marginTop="5dp"
+                    android:horizontalSpacing="5dp"
+                    android:numColumns="2"
+                    android:paddingBottom="8dp"
+                    android:verticalSpacing="5dp" >
+                </com.hall.view.PackNetGridView>
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/gridView1"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/layitem_line" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" >
+
+                <com.hall.view.CriTextView
+                    android:id="@+id/textView3"
+                    criview:style="FILL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:padding="3dp"
+                    android:text="套餐资费"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    criview:borderColor="@color/default_blue"
+                    criview:corder="10" />
+
+                <com.hall.view.PackNetListView
+                    android:id="@+id/packnet_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView3"
+                    android:layout_marginTop="8dp"
+                    android:divider="@color/default_gray"
+                    android:dividerHeight="0.5dp" >
+                </com.hall.view.PackNetListView>
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/packnet_list"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/layitem_line" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical" >
+
+                <com.hall.view.CriTextView
+                    criview:style="FILL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:text="扣费说明"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    criview:borderColor="@color/default_blue"
+                    criview:corder="10" />
+
+                <TextView
+                    android:id="@+id/packnet_costtype"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="1：当月开通，次月1号理解扣费生效。\n2：中意通21 29 39三种套餐扣费方式是当月20号开通，次月20号扣费"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/layitem_line" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical" >
+
+                <com.hall.view.CriTextView
+                    criview:style="FILL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:text="资费说明"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    criview:borderColor="@color/default_blue"
+                    criview:corder="10" />
+
+                <TextView
+                    android:id="@+id/packnet_packdes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="3dp"
+                    android:layout_marginTop="8dp"
+                    android:text="1：当月开通，次月1号理解扣费生效。\n2：中意通21 29 39三种套餐扣费方式是当月20号开通，次月20号扣费"
+                    android:textColor="#000"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/layitem_line" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp" >
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/layitem_line" />
+
+        <com.hall.view.CriButton
+            android:id="@+id/ok"
+            criview:style="FILL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView4"
+            android:layout_margin="8dp"
+            android:background="@null"
+            android:padding="10dp"
+            android:text="立即办理"
+            android:textColor="@color/default_white"
+            android:textSize="17sp"
+            criview:borderColor="@color/default_blue" />
+    </RelativeLayout>
+
+</LinearLayout>

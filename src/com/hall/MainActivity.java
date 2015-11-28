@@ -4,45 +4,42 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 
-import com.hall.fragment.TabItemFragmentFirst;
-import com.hall.fragment.TabItemFragmentFour;
-import com.hall.fragment.TabItemFragmentThree;
-import com.hall.fragment.TabItemFragmentTwo;
+import com.hall.fragment.TabItemFragmentHome;
+import com.hall.fragment.TabItemFragmentMy;
+import com.hall.util.ActivityControl;
 import com.hall.view.BadgeView;
 import com.online.hall.R;
 
 import cxh.voctex.utils.LogUtil;
+import cxh.voctex.utils.ToastUtil;
 
 /**
- * @author voctex  2015-09-20
- *
+ * @author voctex 2015-09-20
+ * 
  */
 @SuppressLint({ "InflateParams", "NewApi" })
 public class MainActivity extends FragmentActivity {
 
 	private FragmentTabHost tabHost;
-	private String[] tabTexts = new String[] { "通话", "个人" };
+	private String[] tabTexts = new String[] { "首页", "我的" };
 	private int[] tabImgs = new int[] { R.drawable.selector_tab_item_icon0,
-			R.drawable.selector_tab_item_icon1,};
-	private Class<?>[] fragments = new Class[] { TabItemFragmentFirst.class,
-			TabItemFragmentTwo.class};
+			R.drawable.selector_tab_item_icon1, };
+	private Class<?>[] fragments = new Class[] { TabItemFragmentHome.class,
+			TabItemFragmentMy.class };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
 		tabHost = (FragmentTabHost) findViewById(R.id.tab_fa_fth);
 		tabHost.setup(this, getSupportFragmentManager(),
 				R.id.tab_fa_maincontent);
@@ -53,7 +50,7 @@ public class MainActivity extends FragmentActivity {
 			tabHost.addTab(spec, fragments[i], null);
 		}
 		// 设置tabs之间的分隔线不显示
-		tabHost.getTabWidget().setShowDividers(LinearLayout.SHOW_DIVIDER_NONE);
+		// tabHost.getTabWidget().setShowDividers(LinearLayout.SHOW_DIVIDER_NONE);
 		tabHost.setCurrentTab(0);
 		tabHost.setOnTabChangedListener(new OnTabChangeListener() {
 
@@ -61,11 +58,11 @@ public class MainActivity extends FragmentActivity {
 			public void onTabChanged(String tabId) {
 				// TODO Auto-generated method stub
 				LogUtil.showI(LogUtil.Voc, "tabId=" + tabId);
-				
+
 			}
 		});
-		
-		TabItemFragmentFirst firstFragment = (TabItemFragmentFirst) getSupportFragmentManager()
+
+		TabItemFragmentHome firstFragment = (TabItemFragmentHome) getSupportFragmentManager()
 				.findFragmentByTag(tabTexts[0]);
 
 	}
@@ -86,28 +83,28 @@ public class MainActivity extends FragmentActivity {
 				.findViewById(R.id.tab_fa_item_img);
 		textView.setText(tabTexts[index]);
 		imageView.setImageResource(tabImgs[index]);
-
-		BadgeView badgeView = new BadgeView(MainActivity.this, linearLayout);
-		badgeView.setText("7");
-		badgeView.setBadgeMargin(7);
-		badgeView.setTextSize(11.8f);
-//		badgeView.show();
-
-		view.setTag(badgeView);
-		if (index == 0) {
-			imageView.setOnClickListener(new OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-					// TODO Auto-generated method stub
-					LogUtil.showI(LogUtil.Voc,
-							"I click this linearlayout in first item");
-					((BadgeView) view.getTag()).toggle();
-				}
-			});
-		}
-
 		return view;
+	}
+
+	private long waitTime = 2000;
+	private long touchTime = 0;
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		// TODO Auto-generated method stub
+		if (event.getAction() == KeyEvent.ACTION_DOWN
+				&& KeyEvent.KEYCODE_BACK == keyCode) {
+			long currentTime = System.currentTimeMillis();
+			if ((currentTime - touchTime) >= waitTime) {
+				ToastUtil.showS(getBaseContext(), "再按一次退出", true);
+				touchTime = currentTime;
+
+			} else {
+				ActivityControl.finishProgrom();
+			}
+			return true;
+		}
+		return super.onKeyDown(keyCode, event);
 	}
 
 }

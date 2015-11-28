@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Cri View -->
+    <declare-styleable name="criView">
+        <!-- 圆角的大小弧度 -->
+        <attr name="corder" format="integer" />
+        <!-- 0:空心	1：实心 -->
+        <attr name="style">
+            <enum name="STROKE" value="0"></enum>
+            <enum name="FILL" value="1"></enum>
+        </attr>
+        <!-- 空心的时候边框的宽度 -->
+        <attr name="borderWidth" format="integer"></attr>
+        <!-- 边框颜色,既是背景色 -->
+        <attr name="borderColor" format="color"></attr>
+    </declare-styleable>
+
+</resources>

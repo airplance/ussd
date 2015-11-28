@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/packnet_grid_item_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/default_blue"
+        android:padding="2dp" >
+
+        <TextView
+            android:id="@+id/packnet_grid_item_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:ellipsize="middle"
+            android:gravity="center"
+            android:lines="2"
+            android:padding="5dp"
+            android:text="中意通 上网流量+语音套餐"
+            android:textColor="#000"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>
