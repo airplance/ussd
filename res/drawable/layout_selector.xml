@@ -3,5 +3,4 @@
 
     <item android:drawable="@color/layout_press_down" android:state_pressed="true"></item>
     <item android:drawable="@color/layout_press_up" android:state_pressed="false"></item>
-
 </selector>

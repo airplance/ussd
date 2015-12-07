@@ -76,10 +76,7 @@
                 android:paddingRight="10dp"
                 android:paddingTop="5dp"
                 android:text="查询"
-                android:textColor="@color/default_white"
-                criview:borderColor="@color/default_blue"
-                criview:corder="10" />
-
+                android:textColor="@color/default_white" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -131,9 +128,7 @@
                 android:paddingRight="10dp"
                 android:paddingTop="5dp"
                 android:text="查询"
-                android:textColor="@color/default_white"
-                criview:borderColor="@color/default_blue"
-                criview:corder="10" />
+                android:textColor="@color/default_white" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -185,10 +180,7 @@
                 android:paddingRight="10dp"
                 android:paddingTop="5dp"
                 android:text="查询"
-                android:textColor="@color/default_white"
-                criview:borderColor="@color/default_blue"
-                criview:corder="10" />
-
+                android:textColor="@color/default_white" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -235,9 +227,7 @@
                 android:paddingRight="10dp"
                 android:paddingTop="5dp"
                 android:text="查询"
-                android:textColor="@color/default_white"
-                criview:borderColor="@color/default_blue"
-                criview:corder="10" />
+                android:textColor="@color/default_white" />
         </RelativeLayout>
 
         <ImageView

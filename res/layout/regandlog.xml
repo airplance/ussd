@@ -39,12 +39,12 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="@null"
+                android:background="@drawable/back_press_bg"
                 android:text="注册"
                 android:textColor="@color/default_white"
                 android:textSize="17sp"
-                criview:borderColor="@color/default_blue"
-                criview:corder="10" />
+                criview:groundnormal="@color/default_blue"
+                criview:groundpress="@color/default_blue_press" />
 
             <com.hall.view.CriButton
                 android:id="@+id/regandlog_log"
@@ -57,8 +57,8 @@
                 android:text="登录"
                 android:textColor="@color/default_blue"
                 android:textSize="17sp"
-                criview:borderColor="@color/default_gray"
-                criview:corder="10" />
+                criview:groundnormal="@color/default_white"
+                criview:groundpress="@color/default_white_press" />
         </LinearLayout>
     </LinearLayout>
 

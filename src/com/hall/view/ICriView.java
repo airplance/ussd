@@ -1,6 +1,8 @@
 package com.hall.view;
 
+import android.content.Context;
 import android.graphics.Canvas;
+import android.util.AttributeSet;
 
 /**
  * 注意生命：
@@ -8,5 +10,15 @@ import android.graphics.Canvas;
  * @author john
  */
 public interface ICriView {
+	/**
+	 * 根据参数，重新draw视图
+	 * @param canvas
+	 */
 	void onDrawCri(Canvas canvas);
+	/**
+	 * 根据xml设置的参数，设置一些需要用到的参数
+	 * @param context
+	 * @param attrs
+	 */
+	void initAttr(Context context, AttributeSet attrs);
 }

@@ -13,7 +13,14 @@
         <!-- 空心的时候边框的宽度 -->
         <attr name="borderWidth" format="integer"></attr>
         <!-- 边框颜色,既是背景色 -->
-        <attr name="borderColor" format="color"></attr>
+        <attr name="borderColor" format="reference|color"></attr>
+        
+        
+        <!-- 测试背景 -->
+        <attr name="groundnormal" format="reference|color"></attr>
+        <attr name="groundpress" format="reference|color"></attr>
+        <attr name="groundselect" format="reference|color"></attr>
+        <attr name="groundforce" format="reference|color"></attr>
     </declare-styleable>
 
 </resources>

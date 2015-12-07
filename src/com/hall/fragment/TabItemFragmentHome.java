@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -51,6 +52,9 @@ public class TabItemFragmentHome extends Fragment {
 	@ViewInject(R.id.home_center_bunisopen)
 	private RelativeLayout fourCenterBusnis;
 
+	@ViewInject(R.id.home_btn_gopay)
+	private Button goPay;
+
 	@Override
 	public void onAttach(Activity activity) {
 		// TODO Auto-generated method stub
@@ -77,6 +81,8 @@ public class TabItemFragmentHome extends Fragment {
 			fourItemCheck.setOnClickListener(ItemOnclick);
 			fourItemFlow.setOnClickListener(ItemOnclick);
 			fourItemOther.setOnClickListener(ItemOnclick);
+			goPay.setOnClickListener(ItemOnclick);
+
 		} else {
 			ViewGroup viewGroup = (ViewGroup) view.getParent();
 			if (viewGroup != null) {
@@ -115,7 +121,7 @@ public class TabItemFragmentHome extends Fragment {
 			case R.id.home_center_4gserver:
 				// intent.setClass(mActivity, PackageActivity.class);
 				ToastUtil.showS(mActivity, "4G服务", true);
-				break;   
+				break;
 			case R.id.home_center_bunisopen:
 				// intent.setClass(mActivity, PackageActivity.class);
 				ToastUtil.showS(mActivity, "业务开通", true);

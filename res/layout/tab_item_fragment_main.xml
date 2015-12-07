@@ -188,7 +188,6 @@
                         android:textSize="13sp" />
 
                     <TextView
-                        android:id="@+id/packnet_list1_txt"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -232,7 +231,7 @@
                             android:textSize="13sp" />
 
                         <com.hall.view.CriButton
-                            android:id="@+id/button1"
+                         android:id="@+id/home_btn_gopay"
                             criview:style="FILL"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -243,7 +242,7 @@
                             android:textColor="@color/default_white"
                             android:textSize="10sp"
                             criview:borderColor="#19ed13"
-                            criview:corder="10" />
+                             />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>

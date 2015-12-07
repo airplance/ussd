@@ -111,8 +111,8 @@
             android:text="登录"
             android:textColor="@color/default_white"
             android:textSize="17sp"
-            criview:borderColor="@color/default_blue"
-            criview:corder="10" />
+            
+             />
 
     </RelativeLayout>
 

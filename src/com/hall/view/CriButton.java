@@ -6,20 +6,19 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Paint.Style;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.Button;
 
-import com.hall.util.CriUtil;
+import com.hall.ground.CGUtil;
 import com.online.hall.R;
 
 @SuppressLint("NewApi")
 public class CriButton extends Button implements ICriView {
-	private String bordercolorstr = "#ffffff";
 	private CriBean criBean;
 	private Canvas canvas;
+
 	public CriButton(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		// TODO Auto-generated constructor stub
@@ -35,33 +34,40 @@ public class CriButton extends Button implements ICriView {
 	protected void onDraw(Canvas canvas) {
 		// TODO Auto-generated method stub
 		this.canvas = canvas;
-		onDrawCri(canvas);
+		if (criBean != null) {
+			onDrawCri(canvas);
+		}
 		super.onDraw(canvas);
-//		CriUtil.setAllBackGroundState(getContext(),this);
 	}
 
-
-	protected void initAttr(Context context, AttributeSet attrs) {
+	@Override
+	public void initAttr(Context context, AttributeSet attrs) {
 		criBean = new CriBean();
 		TypedArray a = context.obtainStyledAttributes(attrs,
 				R.styleable.criView);
-		criBean.setBorderWidth(a.getInt(R.styleable.criView_borderWidth,
-				CriBean.DEFAULTBORDERWIDTH));
-
-		int styl = a.getInt(R.styleable.criView_style, CriBean.DEFAULTSTYLE);
-		if (styl == 1) {
-			criBean.setStyle(Style.FILL);
-		} else {
-			criBean.setStyle(Style.STROKE);
+		String groundnormal = a.getString(R.styleable.criView_groundnormal);
+		String groundpress = a.getString(R.styleable.criView_groundpress);
+		String groundforce = a.getString(R.styleable.criView_groundforce);
+		String groundselect = a.getString(R.styleable.criView_groundselect);
+		if (groundnormal == null || groundnormal.equals("")) {
+			groundnormal = CriBean.DEFALUTBORDERCOLORSTR;
 		}
-		bordercolorstr = a.getString(R.styleable.criView_borderColor);
-		if (bordercolorstr == null || bordercolorstr.equals("")) {
-			bordercolorstr = "#ffffffff";
+		if (groundpress == null || groundpress.equals("")) {
+			groundpress = CriBean.DEFALUTBORDERCOLORPRESSSTR;
 		}
+		if (groundforce == null || groundforce.equals("")) {
+			groundforce = CriBean.DEFALUTBORDERCOLORSTR;
+		}
+		if (groundselect == null || groundselect.equals("")) {
+			groundselect = CriBean.DEFALUTBORDERCOLORSTR;
+		}
+		criBean.setGroundNormal(Color.parseColor(groundnormal));
+		criBean.setGroundPress(Color.parseColor(groundpress));
+		criBean.setGroundForce(Color.parseColor(groundforce));
+		criBean.setGroundSelect(Color.parseColor(groundselect));
 
-		criBean.setBorderColor(Color.parseColor(bordercolorstr));
-		criBean.setCorder(a.getInt(R.styleable.criView_corder,
-				CriBean.DEFAULTCORDER));
+		//
+		criBean.setBorderColor(criBean.getGroundNormal());
 	}
 
 	@Override
@@ -69,24 +75,24 @@ public class CriButton extends Button implements ICriView {
 		// TODO Auto-generated method stub
 		// 实例化一支画笔
 		Paint paint = new Paint();
-		paint.setStrokeWidth(criBean.getBorderWidth());
-		paint.setStyle(criBean.getStyle()); // 设置样式-空心矩形
+		paint.setStrokeWidth(CriBean.DEFAULTBORDERWIDTH);
+		paint.setStyle(CriBean.FINALSTYLE); // 设置样式-空心矩形
 		paint.setColor(criBean.getBorderColor()); // 设置颜色
 		paint.setAntiAlias(true); // 抗锯齿
 		RectF rectF = new RectF(0, 0, this.getWidth()
 				- criBean.getBorderWidth(), this.getHeight()
 				- criBean.getBorderWidth());
+
+		criBean.setCorder(CriBean.DEFAULTCORDER);
 		canvas.drawRoundRect(rectF, criBean.getCorder(), criBean.getCorder(),
 				paint); // 绘制一个矩形
 	}
 
+	@SuppressLint("WrongCall")
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
 		// TODO Auto-generated method stub
-		CriUtil.onTouchEvent(this, canvas, criBean, bordercolorstr, event);
+		CGUtil.onTouchEvent(this, canvas, criBean,  event);
 		return super.onTouchEvent(event);
 	}
-
-	
-	
 }

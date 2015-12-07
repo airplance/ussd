@@ -135,7 +135,7 @@
                         android:text="发送验证码"
                         android:textColor="@color/default_white"
                         android:textSize="14sp"
-                        criview:borderColor="@color/default_blue"
+                        
                         criview:corder="5" />
                 </LinearLayout>
             </RelativeLayout>
@@ -154,8 +154,8 @@
             android:text="注册"
             android:textColor="@color/default_white"
             android:textSize="17sp"
-            criview:borderColor="@color/default_blue"
-            criview:corder="10" />
+            
+             />
     </RelativeLayout>
 
 </LinearLayout>
