@@ -1,0 +1,22 @@
+1：直接新建一个类，之后继承你想要的控件（比如button）
+2：重写
+  public GButton(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		// TODO Auto-generated constructor stub
+		GUtil.setGroundFromView(this, attrs);
+  }
+      函数 加上GUtil.setGroundFromView(this, attrs);这一句即可
+3：之后再你需要用的xml文件里边直接拖进去，然后在xml文件增加以下代码
+  criview:groundnormal="@drawable/app_icon"
+  criview:groundpress="@drawable/check_layout_func"
+  
+4：运行即可看到效果
+
+
+以上是针对处理按下选择状态时背景图的切换，既然是背景图的话，那么圆角就不在话下，直接叫ui
+设计就可以了；那么如果是这样的需求，我的状态的背景不是图片，而是颜色值该怎么弄了，请看下面
+另一种解决方案！
+
+
+无视上边
+这个包值用来替代选择器的情况的

@@ -3,6 +3,7 @@
 
     <!-- Cri View -->
     <declare-styleable name="criView">
+
         <!-- 圆角的大小弧度 -->
         <attr name="corder" format="integer" />
         <!-- 0:空心	1：实心 -->
@@ -14,13 +15,23 @@
         <attr name="borderWidth" format="integer"></attr>
         <!-- 边框颜色,既是背景色 -->
         <attr name="borderColor" format="reference|color"></attr>
-        
-        
+
         <!-- 测试背景 -->
         <attr name="groundnormal" format="reference|color"></attr>
         <attr name="groundpress" format="reference|color"></attr>
         <attr name="groundselect" format="reference|color"></attr>
         <attr name="groundforce" format="reference|color"></attr>
+
+        <!-- 圆角半径 -->
+        <attr name="cornersradius" format="string"></attr>
+        <!-- 边框颜色值 -->
+        <attr name="strokecolors" format="string"></attr>
+        <!-- normal下的圆角颜色值 -->
+        <attr name="normalcornersradiuscolor" format="string"></attr>
+        <!-- normal下的渐变颜色值 格式：#968574-#123456-#456789 -->
+        <attr name="normalgradientcolors" format="string"></attr>
+        <attr name="presscornersradiuscolor" format="string"></attr>
+        <attr name="pressgradientcolors" format="string"></attr>
     </declare-styleable>
 
 </resources>

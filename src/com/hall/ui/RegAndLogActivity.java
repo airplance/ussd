@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
@@ -15,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 
+import com.hall.MainActivity;
 import com.hall.util.BaseActivity;
 import com.online.hall.R;
 
@@ -44,7 +46,23 @@ public class RegAndLogActivity extends BaseActivity {
 		}
 		Pager.setAdapter(ada);
 		Pager.setOnPageChangeListener(onPageLis);
+		if (getIntent().getBooleanExtra("frist", true)) {
+			log.setVisibility(View.INVISIBLE);
+			reg.setVisibility(View.INVISIBLE);
+			new Handler().postDelayed(intentR, 3 * 1000);
+		}
 	}
+
+	private Runnable intentR = new Runnable() {
+
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			Intent tent = new Intent(RegAndLogActivity.this, MainActivity.class);
+			startActivity(tent);
+			finish();
+		}
+	};
 
 	private OnClickListener twoO = new OnClickListener() {
 

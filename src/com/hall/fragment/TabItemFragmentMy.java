@@ -1,6 +1,7 @@
 package com.hall.fragment;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import com.online.hall.R;
 import com.hall.MainActivity;
+import com.hall.ui.RegAndLogActivity;
 import com.hall.view.BadgeView;
 import com.hall.view.TopLayout;
 
@@ -73,7 +75,9 @@ public class TabItemFragmentMy extends Fragment {
 			int id = v.getId();
 			switch (id) {
 			case R.id.my_item_layout_listcost:
-
+				Intent tent = new Intent(mActivity, RegAndLogActivity.class);
+				tent.putExtra("frist", false);
+				startActivity(tent);
 				break;
 			case R.id.my_item_layout_flow:
 
