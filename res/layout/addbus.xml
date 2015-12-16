@@ -56,7 +56,7 @@
                 android:layout_toLeftOf="@+id/button1"
                 android:layout_toRightOf="@+id/imageView2"
                 android:gravity="center_vertical"
-                android:text="查询本机号码"
+                android:text="来电提醒 "
                 android:textColor="#000"
                 android:textSize="14sp" />
 
@@ -72,7 +72,7 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingTop="5dp"
-                android:text="查询"
+                android:text="开通"
                 android:textColor="@color/default_white" />
         </RelativeLayout>
 
@@ -109,24 +109,17 @@
                 android:layout_toLeftOf="@+id/CriButton01"
                 android:layout_toRightOf="@+id/ImageView01"
                 android:gravity="center_vertical"
-                android:text="查询本机余额,免费分数及流量"
+                android:text="开机提醒"
                 android:textColor="#000"
                 android:textSize="14sp" />
 
-            <com.hall.view.CriButton
-                android:id="@+id/CriButton01"
-                criview:style="FILL"
+            <CheckBox
+                style="@style/CustomCheckboxTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:background="@null"
-                android:paddingBottom="5dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="5dp"
-                android:text="查询"
-                android:textColor="@color/default_white" />
+                android:paddingRight="5dp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -162,12 +155,12 @@
                 android:layout_toLeftOf="@+id/CriButton02"
                 android:layout_toRightOf="@+id/ImageView03"
                 android:gravity="center_vertical"
-                android:text="查询本机已开通套餐 "
+                android:text="呼叫转移"
                 android:textColor="#000"
                 android:textSize="14sp" />
 
             <com.hall.view.CriButton
-                android:id="@+id/CriButton02"
+                android:id="@+id/CriButton04"
                 criview:style="FILL"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -178,7 +171,7 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingTop="5dp"
-                android:text="查询"
+                android:text="开通"
                 android:textColor="@color/default_white" />
         </RelativeLayout>
 
@@ -212,15 +205,15 @@
                 android:layout_alignBottom="@+id/ImageView02"
                 android:layout_alignTop="@+id/ImageView02"
                 android:layout_marginLeft="10dp"
-                android:layout_toLeftOf="@+id/CriButton04"
+                android:layout_toLeftOf="@+id/CriButton4"
                 android:layout_toRightOf="@+id/ImageView02"
                 android:gravity="center_vertical"
-                android:text="查询本机已开通功能"
+                android:text="呼叫等待"
                 android:textColor="#000"
                 android:textSize="14sp" />
 
             <com.hall.view.CriButton
-                android:id="@+id/CriButton04"
+                android:id="@+id/CriButton4"
                 criview:style="FILL"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -231,60 +224,7 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingTop="5dp"
-                android:text="查询"
-                android:textColor="@color/default_white" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/RelativeLayout02"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:paddingTop="8dp" >
-
-            <ImageView
-                android:id="@+id/ImageView04"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginBottom="8dp"
-                android:scaleType="center"
-                android:src="@drawable/check_layout_language" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/ImageView04"
-                android:scaleType="fitXY"
-                android:src="@drawable/layitem_line" />
-
-            <TextView
-                android:id="@+id/TextView05"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/ImageView04"
-                android:layout_alignTop="@+id/ImageView04"
-                android:layout_marginLeft="10dp"
-                android:layout_toLeftOf="@+id/CriButton05"
-                android:layout_toRightOf="@+id/ImageView04"
-                android:gravity="center_vertical"
-                android:text="查询本机语言设置"
-                android:textColor="#000"
-                android:textSize="14sp" />
-
-            <com.hall.view.CriButton
-                android:id="@+id/CriButton05"
-                criview:style="FILL"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:background="@null"
-                android:paddingBottom="5dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="5dp"
-                android:text="查询"
+                android:text="开通"
                 android:textColor="@color/default_white" />
         </RelativeLayout>
 
@@ -315,25 +255,17 @@
                 android:layout_toLeftOf="@+id/CriButton03"
                 android:layout_toRightOf="@+id/ImageView05"
                 android:gravity="center_vertical"
-                android:text="查询礼包"
+                android:text="隐藏号码"
                 android:textColor="#000"
                 android:textSize="14sp" />
 
-            <com.hall.view.CriButton
-                android:id="@+id/CriButton03"
-                criview:style="FILL"
+            <CheckBox
+                style="@style/CustomCheckboxTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/TextView03"
-                android:layout_alignBottom="@+id/TextView03"
                 android:layout_alignParentRight="true"
-                android:background="@null"
-                android:paddingBottom="5dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="5dp"
-                android:text="查询"
-                android:textColor="@color/default_white" />
+                android:layout_centerVertical="true"
+                android:paddingRight="5dp" />
         </RelativeLayout>
 
         <ImageView

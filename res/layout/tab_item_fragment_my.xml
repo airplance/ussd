@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:imagecontrol="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="0.5dp"
@@ -15,7 +16,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/default_gray"
+            android:background="@color/default_white"
             android:orientation="vertical" >
 
             <com.hall.view.TopLayout
@@ -28,18 +29,21 @@
                 android:layout_height="140dp"
                 android:background="@color/default_blue" >
 
-                <ImageView
-                    android:id="@+id/imageView1"
+                <com.hall.view.RoundImageView
+                    android:id="@+id/my_img"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/my_top_toux_bg" />
+                    imagecontrol:border_inside_color="#00000000"
+                    imagecontrol:border_outside_color="#ffd5d1c8"
+                    imagecontrol:border_thickness="0.5dp" >
+                </com.hall.view.RoundImageView>
 
                 <TextView
                     android:id="@+id/textView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/imageView1"
+                    android:layout_below="@+id/my_img"
                     android:layout_centerHorizontal="true"
                     android:text="18923403769"
                     android:textSize="19sp" />
@@ -211,7 +215,6 @@
                     android:scaleType="fitXY"
                     android:src="@drawable/layitem_line" />
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 

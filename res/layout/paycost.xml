@@ -6,10 +6,6 @@
     android:background="#fff"
     android:orientation="vertical" >
 
-    <com.hall.view.TopLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </com.hall.view.TopLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

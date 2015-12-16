@@ -43,5 +43,5 @@ public class BaseActivity extends Activity {
 		// TODO Auto-generated method stub
 		return super.onCreateView(name, context, attrs);
 	}
-	
+
 }

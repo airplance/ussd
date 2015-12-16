@@ -1,4 +1,4 @@
-package com.hall.ui;
+package com.hall.fragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,11 +29,10 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.hall.bean.PackNetInfoBean;
-import com.hall.util.BaseActivity;
+import com.hall.ui.PackNetListAdapter;
 import com.hall.view.CustomDialog;
 import com.hall.view.PackNetGridView;
 import com.hall.view.PackNetListView;
-import com.hall.view.TopLayout;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.exception.HttpException;
@@ -46,30 +45,33 @@ import com.online.hall.R;
 
 import cxh.voctex.utils.ToastUtil;
 
-public class PackageActivity extends BaseActivity {
+public class PackageFragment extends BaseFragment {
 
-	public static final int HEARVIEWZERO=0,HEARVIEWONE=1,HEARVIEWTWO = 2, HEARVIEWTHREE = 3;
+	public static final String TAG = "com.hall.fragment.PackageFragment";
+
+	public static final int HEARVIEWZERO = 0, HEARVIEWONE = 1, HEARVIEWTWO = 2,
+			HEARVIEWTHREE = 3;
 
 	@ViewInject(R.id.packnet_ok)
 	private Button packnet_ok;
+
 	@OnClick(R.id.packnet_ok)
-	public void OKOnClick(View v){
-        builder.create().show();  
+	public void OKOnClick(View v) {
+		builder.create().show();
 	}
-	
-	
+
 	@ViewInject(R.id.packnet_packdes)
 	private TextView packDes;
 	@ViewInject(R.id.packnet_costtype)
 	private TextView costType;
-	
+
 	// 说明的ListView
 	@ViewInject(R.id.packnet_list)
 	private PackNetListView infoListView;
-	
+
 	@ViewInject(R.id.packnet_grid)
 	private PackNetGridView infoGridView;
-	
+
 	private ProgressDialog dialog;
 	private int selectGidIndex = 0;
 	private PackNetListAdapter adapter;
@@ -81,52 +83,61 @@ public class PackageActivity extends BaseActivity {
 	private View hearView;
 
 	private CustomDialog.Builder builder;
+
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.packnet);
-		ViewUtils.inject(this);
-		dialog = new ProgressDialog(this, ProgressDialog.STYLE_HORIZONTAL);
-		dialog.show();
-		TopLayout top = (TopLayout) findViewById(TopLayout.TOPID);
-		top.setTitleAndBack("上网套餐", View.VISIBLE, null);
-		infoListView.addHeaderView(hearView = getList1HearView());
-		TextList1Data();
-		initDialog();
+		if (mViewGroup == null) {
+			mViewGroup = (ViewGroup) inflater.inflate(R.layout.packnet,
+					container, false);
+			ViewUtils.inject(this, mViewGroup);
+			dialog = new ProgressDialog(mActivity,
+					ProgressDialog.STYLE_HORIZONTAL);
+			dialog.show();
+			setTitleAndBack("上网套餐", View.VISIBLE, null);
+			infoListView.addHeaderView(hearView = getList1HearView());
+			TextList1Data();
+			initDialog();
+		} else {
+			ViewGroup viewGroup = (ViewGroup) mViewGroup.getParent();
+			if (viewGroup != null) {
+				viewGroup.removeAllViewsInLayout();
+			}
+		}
+		setTitleAndBack("上网套餐", View.VISIBLE, null);
+		return mViewGroup;
 	}
 
 	private void initDialog() {
 		// TODO Auto-generated method stub
-		builder = new CustomDialog.Builder(this);  
-        builder.setMessage("开通费 5€，月费 XX,到期日期 XX");  
-        builder.setTitle("开通套餐");  
-        builder.setPositiveButton("开通", new DialogInterface.OnClickListener() {  
-            public void onClick(DialogInterface dialog, int which) {  
-                dialog.dismiss();  
-                //设置你的操作事项 
-                
-            }  
-        });  
-  
-        builder.setNegativeButton("取消",  
-                new android.content.DialogInterface.OnClickListener() {  
-                    public void onClick(DialogInterface dialog, int which) {  
-                        dialog.dismiss();  
-                    }  
-                });  
-  
-	}
+		builder = new CustomDialog.Builder(mActivity);
+		builder.setMessage("开通费 5€，月费 XX,到期日期 XX");
+		builder.setTitle("开通套餐");
+		builder.setPositiveButton("开通", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+				// 设置你的操作事项
 
+			}
+		});
+
+		builder.setNegativeButton("取消",
+				new android.content.DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						dialog.dismiss();
+					}
+				});
+
+	}
 
 	private Handler mHandler = new Handler() {
 		public void handleMessage(android.os.Message msg) {
 			if (msg.what == -1) {
 				mList.clear();
 				mList.addAll((List<List<PackNetInfoBean>>) msg.obj);
-				adapter = new PackNetListAdapter(getBaseContext(), mList);
-				gridAdapter = new PackNetGridAdapter(getBaseContext(), mList,
-						mHandler);
+				adapter = new PackNetListAdapter(mActivity, mList);
+				gridAdapter = new PackNetGridAdapter(mActivity, mList, mHandler);
 				infoListView.setAdapter(adapter);
 				infoGridView.setAdapter(gridAdapter);
 			} else {
@@ -142,7 +153,7 @@ public class PackageActivity extends BaseActivity {
 							View.VISIBLE);
 					hearView.findViewById(HEARVIEWTHREE).setVisibility(
 							View.GONE);
-				}else{
+				} else {
 					hearView.findViewById(HEARVIEWTWO).setVisibility(
 							View.VISIBLE);
 					hearView.findViewById(HEARVIEWTHREE).setVisibility(
@@ -176,7 +187,7 @@ public class PackageActivity extends BaseActivity {
 					for (int i = 0; i < ar.length(); i++) {
 						JSONObject jo = ar.getJSONObject(i);
 						String gridname = jo.getString("gridname");
-//						gridname = " " + i;
+						// gridname = " " + i;
 						String costdes = jo.getString("costdes");
 						String costtype = jo.getString("costtype");
 
@@ -196,7 +207,7 @@ public class PackageActivity extends BaseActivity {
 					msg.obj = mList;
 					mHandler.sendMessage(msg);
 				} else {
-					ToastUtil.showS(getBaseContext(), "后台数据出错", true);
+					ToastUtil.showS(mActivity, "后台数据出错", true);
 				}
 
 			} catch (JSONException e) {
@@ -208,7 +219,7 @@ public class PackageActivity extends BaseActivity {
 		@Override
 		public void onFailure(HttpException arg0, String arg1) {
 			// TODO Auto-generated method stub
-			ToastUtil.showL(getBaseContext(), "无网络或者数据出错");
+			ToastUtil.showL(mActivity, "无网络或者数据出错");
 		}
 	};
 
@@ -254,12 +265,12 @@ public class PackageActivity extends BaseActivity {
 		String[] str = { "套餐", "月费", "上网流量", "意大利、中国号码" };
 		float[] weight = { 1.0f, 1.0f, 0.98f, 0.8f };
 		int bgColor = getResources().getColor(R.color.default_blue);
-		LinearLayout l = new LinearLayout(this);
+		LinearLayout l = new LinearLayout(mActivity);
 		l.setBackgroundColor(getResources().getColor(R.color.packnet_item_line));
 		AbsListView.LayoutParams params = new AbsListView.LayoutParams(-1, 60);
 		l.setLayoutParams(params);
 		for (int i = 0; i < str.length; i++) {
-			TextView t1 = new TextView(this);
+			TextView t1 = new TextView(mActivity);
 			t1.setTextSize(15.0f);
 			t1.setGravity(Gravity.CENTER);
 			t1.setText(str[i]);
@@ -366,5 +377,8 @@ public class PackageActivity extends BaseActivity {
 		}
 	}
 
-	String dddd = "[{\"gridname\":\"gridname1\",\"itembody\":[{\"name\":\"111111111\",\"monthcost\":\"2222222\",\"netflow\":\"333\",\"minute\":\"444444\",\"ussdcode\":\"5555555555\"},{\"name\":\"111111111\",\"monthcost\":\"2222222\",\"netflow\":\"333\",\"minute\":\"444444\",\"ussdcode\":\"5555555555\"},{\"name\":\"111111111\",\"monthcost\":\"2222222\",\"netflow\":\"333\",\"minute\":\"444444\",\"ussdcode\":\"5555555555\"},{\"name\":\"111111111\",\"monthcost\":\"2222222\",\"netflow\":\"333\",\"minute\":\"444444\",\"ussdcode\":\"5555555555\"}],\"costdes\":\"这个是随便输出的哦UI阿什顿飞\u5c06\u52a8\u6d41\u91cf\",\"costtype\":\"\u6263\u8d39\u65b9\u5f0f\"},{\"gridname\":\"gridname1\",\"itembody\":[{\"name\":\"111111111\",\"monthcost\":\"2222222\",\"netflow\":\"333\",\"minute\":\"444444\",\"ussdcode\":\"5555555555\"},{\"name\":\"111111111\",\"monthcost\":\"2222222\",\"netflow\":\"333\",\"minute\":\"444444\",\"ussdcode\":\"5555555555\"},{\"name\":\"111111111\",\"monthcost\":\"2222222\",\"netflow\":\"333\",\"minute\":\"444444\",\"ussdcode\":\"5555555555\"},{\"name\":\"111111111\",\"monthcost\":\"2222222\",\"netflow\":\"333\",\"minute\":\"444444\",\"ussdcode\":\"5555555555\"}],\"costdes\":\"1\u3001\u4e0a\u7f51\u6d41\u91cf\u9700\u8981\u5c06\u63a5\u5165\u70b9\r\n\u3000\u3000\u8bbe\u7f6e\u4e3a\r\n\u542f\u79fb\u5f00\u52a8\u6d41\u91cf\",\"costtype\":\"\u6263\u8d39\u65b9\u5f0f\"},{\"gridname\":\"gridname1\",\"itembody\":[{\"name\":\"111111111\",\"monthcost\":\"2222222\",\"netflow\":\"333\",\"minute\":\"444444\",\"ussdcode\":\"5555555555\"},{\"name\":\"111111111\",\"monthcost\":\"2222222\",\"netflow\":\"333\",\"minute\":\"444444\",\"ussdcode\":\"5555555555\"},{\"name\":\"111111111\",\"monthcost\":\"2222222\",\"netflow\":\"333\",\"minute\":\"444444\",\"ussdcode\":\"5555555555\"},{\"name\":\"111111111\",\"monthcost\":\"2222222\",\"netflow\":\"333\",\"minute\":\"444444\",\"ussdcode\":\"5555555555\"}],\"costdes\":\"1\u3001\u4e0a\u7f51\u6d41\u91cf\u9700\u8981\u5c06\u63a5\u5165\u70b9\r\n\u3000\u3000\u8bbe\u7f6e\u4e3a\r\n\u542f\u79fb\u5f00\u52a8\u6d41\u91cf\",\"costtype\":\"\u6263\u8d39\u65b9\u5f0f\"},{\"gridname\":\"gridname1\",\"itembody\":[{\"name\":\"111111111\",\"monthcost\":\"2222222\",\"netflow\":\"333\",\"minute\":\"444444\",\"ussdcode\":\"5555555555\"},{\"name\":\"111111111\",\"monthcost\":\"2222222\",\"netflow\":\"333\",\"minute\":\"444444\",\"ussdcode\":\"5555555555\"},{\"name\":\"111111111\",\"monthcost\":\"2222222\",\"netflow\":\"333\",\"minute\":\"444444\",\"ussdcode\":\"5555555555\"},{\"name\":\"111111111\",\"monthcost\":\"2222222\",\"netflow\":\"333\",\"minute\":\"444444\",\"ussdcode\":\"5555555555\"}],\"costdes\":\"1\u3001\u4e0a\u7f51\u6d41\u91cf\u9700\u8981\u5c06\u63a5\u5165\u70b9\r\n\u3000\u3000\u8bbe\u7f6e\u4e3a\r\n\u542f\u79fb\u5f00\u52a8\u6d41\u91cf\",\"costtype\":\"這是隨便輸出的\"}]";
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+	}
 }

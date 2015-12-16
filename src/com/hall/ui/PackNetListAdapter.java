@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.hall.bean.PackNetInfoBean;
+import com.hall.fragment.PackageFragment;
 import com.online.hall.R;
 
 public class PackNetListAdapter extends BaseAdapter {
@@ -89,10 +90,10 @@ public class PackNetListAdapter extends BaseAdapter {
 		} else {
 			h = (Holder) convertView.getTag();
 		}
-		if (selectGidIndex == PackageActivity.HEARVIEWTWO) {
+		if (selectGidIndex == PackageFragment.HEARVIEWTWO) {
 			h.netflow.setVisibility(View.GONE);
 			h.minute.setVisibility(View.VISIBLE);
-		} else if (selectGidIndex == PackageActivity.HEARVIEWTHREE) {
+		} else if (selectGidIndex == PackageFragment.HEARVIEWTHREE) {
 			h.netflow.setVisibility(View.VISIBLE);
 			h.minute.setVisibility(View.GONE);
 		} else {

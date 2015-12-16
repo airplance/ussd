@@ -1,7 +1,6 @@
 package com.hall.fragment;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import android.app.Activity;
@@ -16,18 +15,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.ImageView.ScaleType;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.hall.adapter.BannerAdapter;
-import com.hall.ui.CheckActivity;
 import com.hall.ui.OtherActivity;
-import com.hall.ui.PackageActivity;
-import com.hall.ui.PayCostActivity;
+import com.hall.ui.ParentActivity;
 import com.hall.view.TopLayout;
 import com.lidroid.xutils.BitmapUtils;
 import com.lidroid.xutils.ViewUtils;
@@ -187,33 +182,36 @@ public class TabItemFragmentHome extends Fragment {
 			int id = v.getId();
 			switch (id) {
 			case R.id.home_item_pay:
-				intent.setClass(mActivity, PayCostActivity.class);
+				intent.setClass(mActivity, ParentActivity.class);
+				intent.putExtra("name", PayCostFragment.TAG);
 				break;
 			case R.id.home_item_check:
-				intent.setClass(mActivity, CheckActivity.class);
-
+				intent.setClass(mActivity, ParentActivity.class);
+				intent.putExtra("name", CheckFragment.TAG);
+				
 				break;
 			case R.id.home_item_pack:
-				intent.setClass(mActivity, PackageActivity.class);
-
+				intent.setClass(mActivity, ParentActivity.class);
+				intent.putExtra("name", PackageFragment.TAG);
 				break;
 			case R.id.home_item_wifi:
-				intent.setClass(mActivity, OtherActivity.class);
+				intent.setClass(mActivity, ParentActivity.class);
+				intent.putExtra("name", WifiFragment.TAG);
 				break;
 			case R.id.home_item_data:
-				intent.setClass(mActivity, OtherActivity.class);
+				intent.setClass(mActivity, ParentActivity.class);
+				intent.putExtra("name", DataAllFragment.TAG);
 				break;
 			case R.id.home_item_net:
 				ToastUtil.showS(mActivity, "跳转到APN");
 //				intent.setClass(mActivity, OtherActivity.class);
 				break;
 			case R.id.home_item_skill:
-				intent.setClass(mActivity, OtherActivity.class);
+				intent.setClass(mActivity, ParentActivity.class);
 				break;
 			case R.id.home_item_add:
-//				intent.setClass(mActivity, OtherActivity.class);
-				mBannerAdapterBottom.updateImgList(bannersImgBottom);
-				mBannerAdapter.updateImgList(bannersImg);
+				intent.setClass(mActivity, ParentActivity.class);
+				intent.putExtra("name", AddBusFragment.TAG);
 				break;
 
 			// mBannerAdapter.updateImgList(bannersImg);

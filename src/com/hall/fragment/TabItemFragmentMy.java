@@ -2,20 +2,21 @@ package com.hall.fragment;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
-import com.online.hall.R;
-import com.hall.MainActivity;
 import com.hall.ui.RegAndLogActivity;
-import com.hall.view.BadgeView;
+import com.hall.view.RoundImageView;
 import com.hall.view.TopLayout;
+import com.lidroid.xutils.ViewUtils;
+import com.lidroid.xutils.view.annotation.ViewInject;
+import com.online.hall.R;
 
 import cxh.voctex.utils.LogUtil;
 
@@ -23,9 +24,18 @@ public class TabItemFragmentMy extends Fragment {
 
 	private Activity mActivity;
 	private ViewGroup view;
-	private int index;
 
-	private RelativeLayout itemList, itemFlow, itemPack, itemPay;
+	@ViewInject(R.id.my_item_layout_listcost)
+	private RelativeLayout my_item_layout_listcost;
+	@ViewInject(R.id.my_item_layout_flow)
+	private RelativeLayout my_item_layout_flow;
+	@ViewInject(R.id.my_item_layout_package)
+	private RelativeLayout my_item_layout_package;
+	@ViewInject(R.id.my_item_layout_pay)
+	private RelativeLayout my_item_layout_pay;
+
+	@ViewInject(R.id.my_img)
+	private RoundImageView img;
 
 	@Override
 	public void onAttach(Activity activity) {
@@ -42,21 +52,16 @@ public class TabItemFragmentMy extends Fragment {
 		if (view == null) {
 			view = (ViewGroup) inflater.inflate(R.layout.tab_item_fragment_my,
 					container, false);
-			TopLayout top=(TopLayout)view.findViewById(TopLayout.TOPID);
+			ViewUtils.inject(this, view);
+			TopLayout top = (TopLayout) view.findViewById(TopLayout.TOPID);
 			top.setTitleAndBack("我的", View.INVISIBLE, null);
-			itemList = (RelativeLayout) view
-					.findViewById(R.id.my_item_layout_listcost);
-			itemFlow = (RelativeLayout) view
-					.findViewById(R.id.my_item_layout_flow);
-			itemPack = (RelativeLayout) view
-					.findViewById(R.id.my_item_layout_package);
-			itemPay = (RelativeLayout) view
-					.findViewById(R.id.my_item_layout_pay);
-			itemList.setOnClickListener(itemsO);
-			itemFlow.setOnClickListener(itemsO);
-			itemPack.setOnClickListener(itemsO);
-			itemPay.setOnClickListener(itemsO);
+			my_item_layout_listcost.setOnClickListener(itemsO);
+			my_item_layout_flow.setOnClickListener(itemsO);
+			my_item_layout_package.setOnClickListener(itemsO);
+			my_item_layout_pay.setOnClickListener(itemsO);
 			LogUtil.showI(LogUtil.Voc, "second----view==null");
+			img.setImageBitmap(BitmapFactory.decodeResource(
+					mActivity.getResources(), R.drawable.banner_default_img));
 		} else {
 			ViewGroup viewGroup = (ViewGroup) view.getParent();
 			if (viewGroup != null) {

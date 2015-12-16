@@ -43,7 +43,7 @@ public class TopLayout extends LinearLayout {
 		this.back.setVisibility(showBack);
 	}
 
-	interface BackOnClick {
+	public interface BackOnClick {
 		void doBackThing();
 	}
 
