@@ -65,7 +65,8 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
-                    android:paddingTop="8dp" >
+                    android:paddingTop="8dp"
+                    android:visibility="gone" >
 
                     <ImageView
                         android:id="@+id/imageView2"
@@ -103,7 +104,8 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
-                    android:paddingTop="8dp" >
+                    android:paddingTop="8dp"
+                    android:visibility="gone" >
 
                     <ImageView
                         android:id="@+id/ImageView01"
@@ -140,7 +142,8 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
-                    android:paddingTop="8dp" >
+                    android:paddingTop="8dp"
+                    android:visibility="gone" >
 
                     <ImageView
                         android:id="@+id/ImageView03"
@@ -196,7 +199,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_toRightOf="@+id/ImageView05"
                         android:gravity="center_vertical"
-                        android:text="缴费充值"
+                        android:text="充值记录查询"
                         android:textColor="#000"
                         android:textSize="16sp" />
                 </RelativeLayout>

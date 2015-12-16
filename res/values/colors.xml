@@ -15,9 +15,9 @@
     <color name="default_blue">#0085cf</color>
     <color name="default_blue_press">#00529c</color>
     <color name="default_blueq">#33b8ff</color>
-    <color name="default_gray">#f3f1ef</color>
+    <color name="default_gray">#dadada</color>
     <!-- home -->
-    <color name="home_scroll_bg">#f3f1ef</color>
+    <color name="home_scroll_bg">#dadada</color>
     <color name="home_txt_color">#000</color>
     <!-- packnet item line -->
     <color name="packnet_item_line">#abb</color>

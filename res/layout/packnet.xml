@@ -263,7 +263,7 @@
             android:src="@drawable/layitem_line" />
 
         <com.hall.view.CriButton
-            android:id="@+id/ok"
+            android:id="@+id/packnet_ok"
             criview:style="FILL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -271,10 +271,10 @@
             android:layout_margin="8dp"
             android:background="@null"
             android:padding="10dp"
-            android:text="立即办理"
+            android:text="开通套餐"
             android:textColor="@color/default_white"
-            android:textSize="17sp"
-             />
+            android:textSize="17sp" />
+
     </RelativeLayout>
 
 </LinearLayout>

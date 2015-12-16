@@ -28,7 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="本机充值"
+                android:text="本机号码充值"
                 android:textColor="@color/default_blue"
                 android:textSize="19sp" />
 
@@ -51,7 +51,8 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal" >
+                    android:orientation="horizontal"
+                    android:visibility="gone" >
 
                     <TextView
                         android:id="@+id/textView3"
@@ -122,7 +123,7 @@
                             android:layout_weight="1"
                             android:background="@color/default_white"
                             android:ems="10"
-                            android:hint="密码"
+                            android:hint="输入密码"
                             android:padding="5dp"
                             android:textSize="13sp" >
 
@@ -143,7 +144,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="本机充值"
+                android:text="其他号码充值"
                 android:textColor="@color/default_blue"
                 android:textSize="19sp" />
 
@@ -169,23 +170,23 @@
                     android:orientation="horizontal" >
 
                     <TextView
-                        android:id="@+id/TextView04"
+                        android:id="@+id/home_item_check"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="left|center_vertical"
                         android:padding="5dp"
-                        android:text="充值卡密码："
+                        android:text="充值卡号码："
                         android:textColor="#000"
                         android:textSize="15sp" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignBottom="@+id/TextView04"
+                        android:layout_alignBottom="@+id/home_item_check"
                         android:layout_alignParentRight="true"
-                        android:layout_alignTop="@+id/TextView04"
+                        android:layout_alignTop="@+id/home_item_check"
                         android:layout_marginLeft="5dp"
-                        android:layout_toRightOf="@+id/TextView04"
+                        android:layout_toRightOf="@+id/home_item_check"
                         android:background="@color/default_blue" >
 
                         <EditText
@@ -196,7 +197,7 @@
                             android:layout_weight="1"
                             android:background="@color/default_white"
                             android:ems="10"
-                            android:hint="ase sdf 是大法官"
+                            android:hint="输入手机号码"
                             android:padding="5dp"
                             android:textSize="13sp" />
                     </LinearLayout>
@@ -209,7 +210,7 @@
                     android:orientation="horizontal" >
 
                     <TextView
-                        android:id="@+id/TextView05"
+                        android:id="@+id/home_item_pack"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="left|center_vertical"
@@ -221,11 +222,11 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignBottom="@+id/TextView05"
+                        android:layout_alignBottom="@+id/home_item_pack"
                         android:layout_alignParentRight="true"
-                        android:layout_alignTop="@+id/TextView05"
+                        android:layout_alignTop="@+id/home_item_pack"
                         android:layout_marginLeft="5dp"
-                        android:layout_toRightOf="@+id/TextView05"
+                        android:layout_toRightOf="@+id/home_item_pack"
                         android:background="@color/default_blue" >
 
                         <EditText
@@ -236,7 +237,7 @@
                             android:layout_weight="1"
                             android:background="@color/default_white"
                             android:ems="10"
-                            android:hint="密码"
+                            android:hint="输入密码"
                             android:padding="5dp"
                             android:textSize="13sp" />
                     </LinearLayout>
@@ -252,10 +253,9 @@
             android:layout_margin="10dp"
             android:background="@null"
             android:padding="8dp"
-            android:text="立即充值"
+            android:text="充值"
             android:textColor="#fff"
-            android:textSize="17sp"
-             />
+            android:textSize="17sp" />
 
     </LinearLayout>
 

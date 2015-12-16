@@ -26,361 +26,166 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp" >
+                android:layout_height="130dp" >
 
-                <ImageView
-                    android:id="@+id/imageView1"
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/home_banner"
                     android:layout_width="match_parent"
-                    android:layout_height="130dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/home_banner_top" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_below="@+id/imageView1"
-                    android:layout_marginBottom="3dp"
-                    android:layout_marginTop="3dp"
-                    android:background="#FFF"
-                    android:clickable="true"
-                    android:orientation="horizontal" >
-
-                    <LinearLayout
-                        android:id="@+id/home_fouritem_pay"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:clickable="false"
-                        android:longClickable="true"
-                        android:orientation="vertical" >
-
-                        <ImageView
-                            android:id="@+id/line1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="fill_parent"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.45"
-                            android:src="@drawable/home_paycharge" />
-
-                        <TextView
-                            android:id="@+id/textView1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="fill_parent"
-                            android:layout_gravity="center"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="充值"
-                            android:textColor="@color/home_txt_color"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/home_fouritem_check"
-                        android:layout_width="fill_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical" >
-
-                        <ImageView
-                            android:id="@+id/ImageView01"
-                            android:layout_width="wrap_content"
-                            android:layout_height="fill_parent"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.45"
-                            android:src="@drawable/home_check" />
-
-                        <TextView
-                            android:id="@+id/TextView01"
-                            android:layout_width="wrap_content"
-                            android:layout_height="fill_parent"
-                            android:layout_gravity="center"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="查询"
-                            android:textColor="@color/home_txt_color"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/home_fouritem_flow"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical" >
-
-                        <ImageView
-                            android:id="@+id/ImageView02"
-                            android:layout_width="wrap_content"
-                            android:layout_height="fill_parent"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.45"
-                            android:src="@drawable/home_package" />
-
-                        <TextView
-                            android:id="@+id/TextView02"
-                            android:layout_width="wrap_content"
-                            android:layout_height="fill_parent"
-                            android:layout_gravity="center"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="套餐"
-                            android:textColor="@color/home_txt_color"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/home_fouritem_other"
-                        android:layout_width="fill_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical" >
-
-                        <ImageView
-                            android:id="@+id/ImageView03"
-                            android:layout_width="wrap_content"
-                            android:layout_height="fill_parent"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.45"
-                            android:src="@drawable/home_other" />
-
-                        <TextView
-                            android:id="@+id/TextView03"
-                            android:layout_width="wrap_content"
-                            android:layout_height="fill_parent"
-                            android:layout_gravity="center"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="其他"
-                            android:textColor="@color/home_txt_color"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                </LinearLayout>
+                    android:layout_height="match_parent" >
+                </android.support.v4.view.ViewPager>
             </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="#fff"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="10dp" >
+                android:background="@color/default_gray"
+                android:orientation="vertical" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="left|center_horizontal"
-                    android:layout_weight="1"
-                    android:orientation="vertical" >
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="0.5dp"
+                    android:orientation="horizontal" >
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/home_item_pay"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0.5dp"
                         android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:text="尊敬的用户,您好"
-                        android:textColor="@color/home_txt_color"
-                        android:textSize="13sp" />
+                        android:background="@color/default_white"
+                        android:drawableTop="@drawable/home_paycharge"
+                        android:gravity="center_horizontal"
+                        android:padding="5dp"
+                        android:text="充值缴费"
+                        android:textColor="#000" />
 
                     <TextView
+                        android:id="@+id/home_item_check"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0.5dp"
                         android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:text="本月话费：12.5元"
-                        android:textColor="@color/home_txt_color"
-                        android:textSize="13sp" />
+                        android:background="@color/default_white"
+                        android:drawableTop="@drawable/home_check"
+                        android:gravity="center_horizontal"
+                        android:padding="5dp"
+                        android:text="本机查询"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/home_item_pack"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/default_white"
+                        android:drawableTop="@drawable/home_package"
+                        android:gravity="center_horizontal"
+                        android:padding="5dp"
+                        android:text="套餐资费"
+                        android:textColor="#000" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="left|center_vertical"
-                    android:layout_weight="1"
-                    android:orientation="vertical" >
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="0.5dp"
+                    android:orientation="horizontal" >
 
                     <TextView
-                        android:id="@+id/TextView05"
+                        android:id="@+id/home_item_wifi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0.5dp"
+                        android:layout_weight="1"
+                        android:background="@color/default_white"
+                        android:drawableTop="@drawable/home_wifiset"
+                        android:gravity="center_horizontal"
+                        android:padding="5dp"
+                        android:text="WIFI设置"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/home_item_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0.5dp"
+                        android:layout_weight="1"
+                        android:background="@color/default_white"
+                        android:drawableTop="@drawable/home_dataall"
+                        android:gravity="center_horizontal"
+                        android:padding="5dp"
+                        android:text="数据漫游"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/home_item_net"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/default_white"
+                        android:drawableTop="@drawable/home_netset"
+                        android:gravity="center_horizontal"
+                        android:padding="5dp"
+                        android:text="上网设置"
+                        android:textColor="#000" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/home_item_skill"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0.5dp"
+                        android:layout_weight="1"
+                        android:background="@color/default_white"
+                        android:drawableTop="@drawable/home_skill"
+                        android:gravity="center_horizontal"
+                        android:padding="5dp"
+                        android:text="功能资费"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/home_item_add"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0.5dp"
+                        android:layout_weight="1"
+                        android:background="@color/default_white"
+                        android:drawableTop="@drawable/home_addbus"
+                        android:gravity="center_horizontal"
+                        android:padding="5dp"
+                        android:text="增值业务"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:id="@+id/TextView13"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:text="剩余流量：32.2M"
-                        android:textColor="@color/home_txt_color"
-                        android:textSize="13sp" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center_vertical" >
-
-                        <TextView
-                            android:id="@+id/textView3"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.35"
-                            android:gravity="center_vertical"
-                            android:text="当前余额：25.3元"
-                            android:textColor="@color/home_txt_color"
-                            android:textSize="13sp" />
-
-                        <com.hall.view.CriButton
-                         android:id="@+id/home_btn_gopay"
-                            criview:style="FILL"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:padding="2dp"
-                            android:text="去充值"
-                            android:textColor="@color/default_white"
-                            android:textSize="10sp"
-                            criview:borderColor="#19ed13"
-                             />
-                    </LinearLayout>
+                        android:background="@color/default_white"
+                        android:gravity="center_horizontal"
+                        android:padding="5dp"
+                        android:textColor="#000" />
                 </LinearLayout>
             </LinearLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
-                android:layout_marginTop="10dp"
-                android:background="#fff" >
+                android:layout_height="130dp"
+                android:layout_marginTop="20dp" >
 
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="5dp"
-                    android:layout_height="15dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"
-                    android:background="#678950" />
-
-                <LinearLayout
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/home_banner_bottom"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentLeft="true"
-                    android:layout_below="@+id/textView4"
-                    android:layout_marginTop="8dp"
-                    android:background="@color/home_scroll_bg"
-                    android:orientation="vertical" >
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="0.5dp"
-                        android:layout_weight="1"
-                        android:background="@color/home_scroll_bg"
-                        android:orientation="horizontal" >
-
-                        <RelativeLayout
-                            android:id="@+id/home_center_goodpack"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="#fff" >
-
-                            <TextView
-                                android:id="@+id/textView5"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:layout_gravity="center"
-                                android:drawableLeft="@drawable/home_left_one"
-                                android:gravity="center"
-                                android:text="优惠套餐"
-                                android:textColor="@color/home_txt_color"
-                                android:textSize="17sp" />
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:id="@+id/home_center_4gserver"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="0.5dp"
-                            android:layout_weight="1"
-                            android:background="#fff" >
-
-                            <TextView
-                                android:id="@+id/TextView06"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:layout_gravity="center"
-                                android:drawableLeft="@drawable/home_left_two"
-                                android:gravity="center"
-                                android:text=" 4 G 服务"
-                                android:textColor="@color/home_txt_color"
-                                android:textSize="17sp" />
-                        </RelativeLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginBottom="0.5dp"
-                        android:layout_weight="1"
-                        android:background="@color/home_scroll_bg"
-                        android:orientation="horizontal" >
-
-                        <RelativeLayout
-                            android:id="@+id/home_center_checkkno"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="0.5dp"
-                            android:layout_weight="1"
-                            android:background="#fff" >
-
-                            <TextView
-                                android:id="@+id/TextView07"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:layout_gravity="center"
-                                android:drawableLeft="@drawable/home_left_three"
-                                android:gravity="center"
-                                android:text="查询功能"
-                                android:textColor="@color/home_txt_color"
-                                android:textSize="17sp" />
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:id="@+id/home_center_bunisopen"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="0.5dp"
-                            android:layout_marginTop="0.5dp"
-                            android:layout_weight="1"
-                            android:background="#fff" >
-
-                            <TextView
-                                android:id="@+id/TextView08"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:layout_gravity="center"
-                                android:drawableLeft="@drawable/home_left_four"
-                                android:gravity="center"
-                                android:text="业务开通"
-                                android:textColor="@color/home_txt_color"
-                                android:textSize="17sp" />
-                        </RelativeLayout>
-                    </LinearLayout>
-                </LinearLayout>
+                    android:layout_height="match_parent" >
+                </android.support.v4.view.ViewPager>
             </RelativeLayout>
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="match_parent"
-                android:layout_height="140dp"
-                android:layout_marginTop="10dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/home_banner_bottom" />
         </LinearLayout>
     </ScrollView>
 

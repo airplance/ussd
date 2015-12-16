@@ -1,26 +1,37 @@
 package com.hall.fragment;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ImageView.ScaleType;
+import android.widget.TextView;
 
+import com.hall.adapter.BannerAdapter;
 import com.hall.ui.CheckActivity;
 import com.hall.ui.OtherActivity;
 import com.hall.ui.PackageActivity;
 import com.hall.ui.PayCostActivity;
 import com.hall.view.TopLayout;
+import com.lidroid.xutils.BitmapUtils;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
-import com.lidroid.xutils.view.annotation.event.OnClick;
 import com.online.hall.R;
 
 import cxh.voctex.utils.LogUtil;
@@ -30,30 +41,33 @@ public class TabItemFragmentHome extends Fragment {
 
 	private Activity mActivity;
 	private ViewGroup view;
-	private int index = 0;
-	// private RelativeLayout fourCenterGoodPakc, fourCenter4G, fourCenterCheck,
-	// fourCenterBusnis;
 
-	@ViewInject(R.id.home_fouritem_pay)
-	private LinearLayout fourItemPay;
-	@ViewInject(R.id.home_fouritem_check)
-	private LinearLayout fourItemCheck;
-	@ViewInject(R.id.home_fouritem_flow)
-	private LinearLayout fourItemFlow;
-	@ViewInject(R.id.home_fouritem_other)
-	private LinearLayout fourItemOther;
+	@ViewInject(R.id.home_item_pay)
+	private TextView home_item_pay;
+	@ViewInject(R.id.home_item_check)
+	private TextView home_item_check;
+	@ViewInject(R.id.home_item_pack)
+	private TextView home_item_pack;
+	@ViewInject(R.id.home_item_wifi)
+	private TextView home_item_wifi;
+	@ViewInject(R.id.home_item_data)
+	private TextView home_item_data;
+	@ViewInject(R.id.home_item_net)
+	private TextView home_item_net;
+	@ViewInject(R.id.home_item_skill)
+	private TextView home_item_skill;
+	@ViewInject(R.id.home_item_add)
+	private TextView home_item_add;
 
-	@ViewInject(R.id.home_center_goodpack)
-	private RelativeLayout fourCenterGoodPakc;
-	@ViewInject(R.id.home_center_4gserver)
-	private RelativeLayout fourCenter4G;
-	@ViewInject(R.id.home_center_checkkno)
-	private RelativeLayout fourCenterCheck;
-	@ViewInject(R.id.home_center_bunisopen)
-	private RelativeLayout fourCenterBusnis;
+	@ViewInject(R.id.home_banner)
+	private ViewPager mBanner;
+	@ViewInject(R.id.home_banner_bottom)
+	private ViewPager mBannerBottom;
+	private BannerAdapter mBannerAdapter;
+	private BannerAdapter mBannerAdapterBottom;
 
-	@ViewInject(R.id.home_btn_gopay)
-	private Button goPay;
+	private List<ImageView> bannersImg = new ArrayList<ImageView>();
+	private List<ImageView> bannersImgBottom = new ArrayList<ImageView>();
 
 	@Override
 	public void onAttach(Activity activity) {
@@ -72,17 +86,88 @@ public class TabItemFragmentHome extends Fragment {
 			TopLayout top = (TopLayout) view.findViewById(TopLayout.TOPID);
 			top.setTitleAndBack("天天营业厅", View.INVISIBLE, null);
 			ViewUtils.inject(this, view);
-			fourCenterGoodPakc.setOnClickListener(ItemOnclick);
-			fourCenter4G.setOnClickListener(ItemOnclick);
-			fourCenterCheck.setOnClickListener(ItemOnclick);
-			fourCenterBusnis.setOnClickListener(ItemOnclick);
 
-			fourItemPay.setOnClickListener(ItemOnclick);
-			fourItemCheck.setOnClickListener(ItemOnclick);
-			fourItemFlow.setOnClickListener(ItemOnclick);
-			fourItemOther.setOnClickListener(ItemOnclick);
-			goPay.setOnClickListener(ItemOnclick);
+			home_item_pay.setOnClickListener(ItemOnclick);
+			home_item_check.setOnClickListener(ItemOnclick);
+			home_item_pack.setOnClickListener(ItemOnclick);
+			home_item_wifi.setOnClickListener(ItemOnclick);
+			home_item_data.setOnClickListener(ItemOnclick);
+			home_item_net.setOnClickListener(ItemOnclick);
+			home_item_skill.setOnClickListener(ItemOnclick);
+			home_item_add.setOnClickListener(ItemOnclick);
 
+			mBannerAdapter = new BannerAdapter(mActivity, mBanner);
+			mBanner.setAdapter(mBannerAdapter);
+			mBanner.setOnPageChangeListener(mBannerAdapter);
+			mBanner.setOnTouchListener(new View.OnTouchListener() {
+				@Override
+				public boolean onTouch(View v, MotionEvent event) {
+					int action = event.getAction();
+					if (action == MotionEvent.ACTION_DOWN) {
+						mBannerAdapter.setmIsUserTouched(true);
+						Log.e("按下", "按下");
+					} else if (action == MotionEvent.ACTION_MOVE) {
+						Log.e("移动", "移动");
+						mBannerAdapter.setmIsUserTouched(true);
+					} else if (action == MotionEvent.ACTION_UP) {
+						mBannerAdapter.setmIsUserTouched(false);
+						Log.e("放开", "放开");
+					}
+					return false;
+				}
+			});
+			mBannerAdapter.schedule();
+
+			String[] rid = {
+					"http://pic.nipic.com/2007-11-09/2007119122519868_2.jpg",
+					"http://pica.nipic.com/2008-03-19/2008319183523380_2.jpg",
+					"http://imgsrc.baidu.com/forum/pic/item/3ac79f3df8dcd1004e9102b8728b4710b9122f1e.jpg",
+					"http://pic25.nipic.com/20121209/9252150_194258033000_2.jpg",
+					"http://baike.soso.com/p/20090711/20090711101754-314944703.jpg",
+					"http://pic24.nipic.com/20121022/9252150_193011306000_2.jpg" };
+			BitmapUtils bitU = new BitmapUtils(mActivity);
+			bitU.configDefaultLoadingImage(R.drawable.banner_default_img);
+			for (int i = 0; i < rid.length; i++) {
+				ImageView img = new ImageView(mActivity);
+				img.setLayoutParams(new LinearLayout.LayoutParams(-1, -1));
+				bitU.display(img, rid[i]);
+				img.setScaleType(ScaleType.CENTER_CROP);
+				bannersImg.add(img);
+			}
+
+			// ////////////////////////////////////////////////////////
+			mBannerAdapterBottom = new BannerAdapter(mActivity, mBannerBottom);
+			mBannerBottom.setAdapter(mBannerAdapterBottom);
+			mBannerBottom.setOnPageChangeListener(mBannerAdapterBottom);
+			mBannerBottom.setOnTouchListener(new View.OnTouchListener() {
+				@Override
+				public boolean onTouch(View v, MotionEvent event) {
+					int action = event.getAction();
+					if (action == MotionEvent.ACTION_DOWN) {
+						mBannerAdapterBottom.setmIsUserTouched(true);
+						Log.e("按下", "按下");
+					} else if (action == MotionEvent.ACTION_MOVE) {
+						Log.e("移动", "移动");
+						mBannerAdapterBottom.setmIsUserTouched(true);
+					} else if (action == MotionEvent.ACTION_UP) {
+						mBannerAdapterBottom.setmIsUserTouched(false);
+						Log.e("放开", "放开");
+					}
+					return false;
+				}
+			});
+			mBannerAdapterBottom.schedule();
+
+			bitU.configDefaultLoadingImage(R.drawable.banner_default_img);
+			for (int i = 0; i < rid.length; i++) {
+				ImageView img = new ImageView(mActivity);
+				img.setLayoutParams(new LinearLayout.LayoutParams(-1, -1));
+				bitU.display(img, rid[i]);
+				img.setScaleType(ScaleType.CENTER_CROP);
+				bannersImgBottom.add(img);
+			}
+			mBannerAdapterBottom.updateImgList(bannersImgBottom);
+			mBannerAdapter.updateImgList(bannersImg);
 		} else {
 			ViewGroup viewGroup = (ViewGroup) view.getParent();
 			if (viewGroup != null) {
@@ -101,32 +186,37 @@ public class TabItemFragmentHome extends Fragment {
 			Intent intent = new Intent();
 			int id = v.getId();
 			switch (id) {
-			case R.id.home_fouritem_pay:
+			case R.id.home_item_pay:
 				intent.setClass(mActivity, PayCostActivity.class);
 				break;
-			case R.id.home_fouritem_check:
-			case R.id.home_center_checkkno:
+			case R.id.home_item_check:
 				intent.setClass(mActivity, CheckActivity.class);
 
 				break;
-			case R.id.home_fouritem_flow:
-			case R.id.home_center_goodpack:
+			case R.id.home_item_pack:
 				intent.setClass(mActivity, PackageActivity.class);
 
 				break;
-			case R.id.home_fouritem_other:
+			case R.id.home_item_wifi:
 				intent.setClass(mActivity, OtherActivity.class);
 				break;
-
-			case R.id.home_center_4gserver:
-				// intent.setClass(mActivity, PackageActivity.class);
-				ToastUtil.showS(mActivity, "4G服务", true);
+			case R.id.home_item_data:
+				intent.setClass(mActivity, OtherActivity.class);
 				break;
-			case R.id.home_center_bunisopen:
-				// intent.setClass(mActivity, PackageActivity.class);
-				ToastUtil.showS(mActivity, "业务开通", true);
-
+			case R.id.home_item_net:
+				ToastUtil.showS(mActivity, "跳转到APN");
+//				intent.setClass(mActivity, OtherActivity.class);
 				break;
+			case R.id.home_item_skill:
+				intent.setClass(mActivity, OtherActivity.class);
+				break;
+			case R.id.home_item_add:
+//				intent.setClass(mActivity, OtherActivity.class);
+				mBannerAdapterBottom.updateImgList(bannersImgBottom);
+				mBannerAdapter.updateImgList(bannersImg);
+				break;
+
+			// mBannerAdapter.updateImgList(bannersImg);
 			default:
 				break;
 			}
@@ -137,4 +227,9 @@ public class TabItemFragmentHome extends Fragment {
 		}
 	};
 
+	@Override
+	public void onDestroy() {
+		mBannerAdapter.cancelTime();
+		super.onDestroy();
+	}
 }

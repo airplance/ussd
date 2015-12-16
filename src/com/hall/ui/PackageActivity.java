@@ -9,6 +9,7 @@ import org.json.JSONObject;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -20,6 +21,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
@@ -28,14 +30,18 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.hall.bean.PackNetInfoBean;
 import com.hall.util.BaseActivity;
+import com.hall.view.CustomDialog;
 import com.hall.view.PackNetGridView;
 import com.hall.view.PackNetListView;
 import com.hall.view.TopLayout;
 import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
+import com.lidroid.xutils.view.annotation.ViewInject;
+import com.lidroid.xutils.view.annotation.event.OnClick;
 import com.online.hall.R;
 
 import cxh.voctex.utils.ToastUtil;
@@ -44,11 +50,28 @@ public class PackageActivity extends BaseActivity {
 
 	public static final int HEARVIEWZERO=0,HEARVIEWONE=1,HEARVIEWTWO = 2, HEARVIEWTHREE = 3;
 
-	private ProgressDialog dialog;
-	private TextView packDes, costType;
-	private int selectGidIndex = 0;
+	@ViewInject(R.id.packnet_ok)
+	private Button packnet_ok;
+	@OnClick(R.id.packnet_ok)
+	public void OKOnClick(View v){
+        builder.create().show();  
+	}
+	
+	
+	@ViewInject(R.id.packnet_packdes)
+	private TextView packDes;
+	@ViewInject(R.id.packnet_costtype)
+	private TextView costType;
+	
+	// 说明的ListView
+	@ViewInject(R.id.packnet_list)
 	private PackNetListView infoListView;
+	
+	@ViewInject(R.id.packnet_grid)
 	private PackNetGridView infoGridView;
+	
+	private ProgressDialog dialog;
+	private int selectGidIndex = 0;
 	private PackNetListAdapter adapter;
 	private PackNetGridAdapter gridAdapter;
 	private List<List<PackNetInfoBean>> mList = new ArrayList<List<PackNetInfoBean>>();
@@ -57,25 +80,44 @@ public class PackageActivity extends BaseActivity {
 
 	private View hearView;
 
+	private CustomDialog.Builder builder;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.packnet);
+		ViewUtils.inject(this);
 		dialog = new ProgressDialog(this, ProgressDialog.STYLE_HORIZONTAL);
 		dialog.show();
 		TopLayout top = (TopLayout) findViewById(TopLayout.TOPID);
 		top.setTitleAndBack("上网套餐", View.VISIBLE, null);
-
-		packDes = (TextView) findViewById(R.id.packnet_packdes);
-		costType = (TextView) findViewById(R.id.packnet_costtype);
-
-		// 说明的ListView
-		infoListView = (PackNetListView) findViewById(R.id.packnet_list);
-		infoGridView = (PackNetGridView) findViewById(R.id.packnet_grid);
 		infoListView.addHeaderView(hearView = getList1HearView());
 		TextList1Data();
+		initDialog();
 	}
+
+	private void initDialog() {
+		// TODO Auto-generated method stub
+		builder = new CustomDialog.Builder(this);  
+        builder.setMessage("开通费 5€，月费 XX,到期日期 XX");  
+        builder.setTitle("开通套餐");  
+        builder.setPositiveButton("开通", new DialogInterface.OnClickListener() {  
+            public void onClick(DialogInterface dialog, int which) {  
+                dialog.dismiss();  
+                //设置你的操作事项 
+                
+            }  
+        });  
+  
+        builder.setNegativeButton("取消",  
+                new android.content.DialogInterface.OnClickListener() {  
+                    public void onClick(DialogInterface dialog, int which) {  
+                        dialog.dismiss();  
+                    }  
+                });  
+  
+	}
+
 
 	private Handler mHandler = new Handler() {
 		public void handleMessage(android.os.Message msg) {
