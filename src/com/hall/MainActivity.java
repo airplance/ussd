@@ -1,6 +1,7 @@
 package com.hall;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
@@ -40,6 +41,7 @@ public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
 		tabHost = (FragmentTabHost) findViewById(R.id.tab_fa_fth);
 		tabHost.setup(this, getSupportFragmentManager(),
 				R.id.tab_fa_maincontent);
@@ -105,6 +107,18 @@ public class MainActivity extends FragmentActivity {
 			return true;
 		}
 		return super.onKeyDown(keyCode, event);
+	}
+
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		super.onActivityResult(requestCode, resultCode, data);
+		TabItemFragmentMy my = (TabItemFragmentMy) getSupportFragmentManager()
+				.findFragmentByTag(tabTexts[1]);
+		my.onActivityResultForPop(requestCode, resultCode, data);
+		// if (popPhotoView != null) {
+		// popPhotoView.onActivityResult(requestCode, resultCode, data);
+		// }
 	}
 
 }

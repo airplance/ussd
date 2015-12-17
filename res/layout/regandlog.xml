@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:criview="http://schemas.android.com/apk/res/com.online.hall"
+    xmlns:criview="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
@@ -34,7 +34,6 @@
             <com.hall.view.CriButton
                 android:id="@+id/regandlog_reg"
                 style="@null"
-                criview:style="FILL"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -48,7 +47,6 @@
 
             <com.hall.view.CriButton
                 android:id="@+id/regandlog_log"
-                criview:style="FILL"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"

@@ -1,5 +1,6 @@
 package com.hall.fragment;
 
+import hjh.criimag.view.PopPhotoView;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
@@ -12,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import com.hall.ui.RegAndLogActivity;
-import com.hall.view.RoundImageView;
+import com.hall.view.CircleImageView;
 import com.hall.view.TopLayout;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
@@ -35,7 +36,8 @@ public class TabItemFragmentMy extends Fragment {
 	private RelativeLayout my_item_layout_pay;
 
 	@ViewInject(R.id.my_img)
-	private RoundImageView img;
+	private CircleImageView img;
+	private PopPhotoView popPhotoView;
 
 	@Override
 	public void onAttach(Activity activity) {
@@ -52,6 +54,7 @@ public class TabItemFragmentMy extends Fragment {
 		if (view == null) {
 			view = (ViewGroup) inflater.inflate(R.layout.tab_item_fragment_my,
 					container, false);
+			img = (CircleImageView) view.findViewById(R.id.my_img);
 			ViewUtils.inject(this, view);
 			TopLayout top = (TopLayout) view.findViewById(TopLayout.TOPID);
 			top.setTitleAndBack("我的", View.INVISIBLE, null);
@@ -62,6 +65,12 @@ public class TabItemFragmentMy extends Fragment {
 			LogUtil.showI(LogUtil.Voc, "second----view==null");
 			img.setImageBitmap(BitmapFactory.decodeResource(
 					mActivity.getResources(), R.drawable.banner_default_img));
+			int[] textId = new int[] { R.id.take_photo_text,
+					R.id.select_photo_text, R.id.cancel_photo_text };
+			popPhotoView = new PopPhotoView(mActivity,
+					R.layout.cri_view_photo_main, R.id.personal_parent, textId,
+					img, null, null);
+			popPhotoView.initView();
 		} else {
 			ViewGroup viewGroup = (ViewGroup) view.getParent();
 			if (viewGroup != null) {
@@ -99,4 +108,12 @@ public class TabItemFragmentMy extends Fragment {
 			}
 		}
 	};
+
+	public void onActivityResultForPop(int requestCode, int resultCode,
+			Intent data) {
+		// TODO Auto-generated method stub
+		if (popPhotoView != null) {
+			popPhotoView.onActivityResult(requestCode, resultCode, data);
+		}
+	}
 }

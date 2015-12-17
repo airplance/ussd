@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:imagecontrol="http://schemas.android.com/apk/res-auto"
+    xmlns:voc="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/personal_parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="0.5dp"
@@ -29,15 +30,11 @@
                 android:layout_height="140dp"
                 android:background="@color/default_blue" >
 
-                <com.hall.view.RoundImageView
+                <com.hall.view.CircleImageView
                     android:id="@+id/my_img"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:layout_centerInParent="true"
-                    imagecontrol:border_inside_color="#00000000"
-                    imagecontrol:border_outside_color="#ffd5d1c8"
-                    imagecontrol:border_thickness="0.5dp" >
-                </com.hall.view.RoundImageView>
+                    android:layout_centerInParent="true" />
 
                 <TextView
                     android:id="@+id/textView1"
