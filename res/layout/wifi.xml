@@ -6,7 +6,6 @@
     android:background="#fff"
     android:orientation="vertical" >
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -45,19 +44,21 @@
                 android:layout_alignBottom="@+id/ImageView05"
                 android:layout_alignTop="@+id/ImageView05"
                 android:layout_marginLeft="10dp"
-                android:layout_toLeftOf="@+id/CriButton03"
+                android:layout_toLeftOf="@+id/wifi_check"
                 android:layout_toRightOf="@+id/ImageView05"
                 android:gravity="center_vertical"
-                android:text="开通或关 WIFI "
+                android:text="@string/wifi_select"
                 android:textColor="#000"
                 android:textSize="14sp" />
 
             <CheckBox
+                android:id="@+id/wifi_check"
                 style="@style/CustomCheckboxTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
+                android:checked="true"
                 android:paddingRight="5dp" />
         </RelativeLayout>
 
@@ -67,7 +68,6 @@
             android:layout_gravity="bottom"
             android:scaleType="fitXY"
             android:src="@drawable/layitem_line" />
-
     </LinearLayout>
 
 </LinearLayout>

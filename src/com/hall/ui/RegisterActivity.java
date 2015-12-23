@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.hall.MainActivity;
 import com.hall.util.BaseActivity;
+import com.hall.view.CriButton;
 import com.hall.view.TopLayout;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
@@ -17,7 +18,7 @@ import com.online.hall.R;
 public class RegisterActivity extends BaseActivity {
 
 	@ViewInject(R.id.register_ok)
-	private Button ok;
+	private CriButton ok;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +27,11 @@ public class RegisterActivity extends BaseActivity {
 		setContentView(R.layout.register);
 		ViewUtils.inject(this);
 		TopLayout top = (TopLayout) findViewById(TopLayout.TOPID);
-		top.setTitleAndBack("注册用户", View.VISIBLE, null);
+		top.setTitleAndBack(
+				getResources().getString(R.string.user_registertxt),
+				View.VISIBLE, null);
 		ok.setOnClickListener(OnClick);
+		ok.setCheckLogin(false);
 
 	}
 
@@ -45,8 +49,7 @@ public class RegisterActivity extends BaseActivity {
 				tent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(tent);
 				finish();
-				
-				
+
 				break;
 
 			default:

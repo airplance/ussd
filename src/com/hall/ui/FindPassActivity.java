@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import com.hall.MainActivity;
 import com.hall.util.BaseActivity;
+import com.hall.view.CriButton;
 import com.hall.view.TopLayout;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
@@ -16,7 +17,7 @@ import com.online.hall.R;
 public class FindPassActivity extends BaseActivity {
 
 	@ViewInject(R.id.find_ok)
-	private Button ok;
+	private CriButton ok;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +26,11 @@ public class FindPassActivity extends BaseActivity {
 		setContentView(R.layout.findpasswd);
 		ViewUtils.inject(this);
 		TopLayout top = (TopLayout) findViewById(TopLayout.TOPID);
-		top.setTitleAndBack("找回密码", View.VISIBLE, null);
+		top.setTitleAndBack(
+				getResources().getString(R.string.user_forgetpwtxt),
+				View.VISIBLE, null);
 		ok.setOnClickListener(OnClick);
+		ok.setCheckLogin(false);
 	}
 
 	private OnClickListener OnClick = new OnClickListener() {

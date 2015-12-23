@@ -3,6 +3,7 @@ package com.hall.ui;
 import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
@@ -16,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.hall.bean.PackNetInfoBean;
+import com.hall.fragment.PackInfoFragment;
 import com.hall.fragment.PackageFragment;
 import com.online.hall.R;
 
@@ -124,37 +126,42 @@ public class PackNetListAdapter extends BaseAdapter {
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			selectListIndex = pos;
-			adapter.notifyDataSetChanged();
+			// selectListIndex = pos;
+			// adapter.notifyDataSetChanged();
+			Intent tent = new Intent(c, ParentActivity.class);
+			tent.putExtra("name", PackInfoFragment.TAG);
+			PackNetInfoBean bean = list.get(selectGidIndex).get(pos);
+			tent.putExtra("bean", bean);
+			c.startActivity(tent);
 		}
 
 	}
 
 	private void setTextColor(Holder h, PackNetInfoBean bean) {
 
-		// 套餐
-		setTextSomeColor(h.name, 0, 3, blueC);
-		setTextSomeColor(h.name, 3, bean.getName().length(), pingC);
-
-		// 月费
-
-		setTextSomeColor(h.monthcost, 0, bean.getMonthcost().length() - 2,
-				pingC);
-		setTextSomeColor(h.monthcost, bean.getMonthcost().length() - 2, bean
-				.getMonthcost().length(), blueC);
-
-		// 上网流量
-
-		setTextSomeColor(h.netflow, 0, 2, blueC);
-		setTextSomeColor(h.netflow, 2, bean.getNetflow().length() - 2, pingC);
-		setTextSomeColor(h.netflow, bean.getNetflow().length() - 2, bean
-				.getNetflow().length(), blueC);
-		// 拨打分钟
-
-		setTextSomeColor(h.minute, 0, 2, blueC);
-		setTextSomeColor(h.minute, 2, bean.getMinute().length() - 2, pingC);
-		setTextSomeColor(h.minute, bean.getMinute().length() - 2, bean
-				.getMinute().length(), blueC);
+//		// 套餐
+//		setTextSomeColor(h.name, 0, 3, blueC);
+//		setTextSomeColor(h.name, 3, bean.getName().length(), pingC);
+//
+//		// 月费
+//
+//		setTextSomeColor(h.monthcost, 0, bean.getMonthcost().length() - 2,
+//				pingC);
+//		setTextSomeColor(h.monthcost, bean.getMonthcost().length() - 2, bean
+//				.getMonthcost().length(), blueC);
+//
+//		// 上网流量
+//
+//		setTextSomeColor(h.netflow, 0, 2, blueC);
+//		setTextSomeColor(h.netflow, 2, bean.getNetflow().length() - 2, pingC);
+//		setTextSomeColor(h.netflow, bean.getNetflow().length() - 2, bean
+//				.getNetflow().length(), blueC);
+//		// 拨打分钟
+//
+//		setTextSomeColor(h.minute, 0, 2, blueC);
+//		setTextSomeColor(h.minute, 2, bean.getMinute().length() - 2, pingC);
+//		setTextSomeColor(h.minute, bean.getMinute().length() - 2, bean
+//				.getMinute().length(), blueC);
 	}
 
 	private void setTextSomeColor(TextView txt, int begin, int end, int color) {

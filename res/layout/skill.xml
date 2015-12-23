@@ -6,6 +6,7 @@
     android:background="#fff"
     android:orientation="vertical" >
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -55,106 +56,12 @@
                 android:layout_toLeftOf="@+id/button1"
                 android:layout_toRightOf="@+id/imageView2"
                 android:gravity="center_vertical"
-                android:text="@string/addbus_comecall"
-                android:textColor="#000"
-                android:textSize="14sp" />
-
-            <CheckBox
-                android:id="@+id/addbus_comecall"
-                style="@style/CustomCheckboxTheme"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:paddingRight="5dp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/my_item_layout_flow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:paddingTop="8dp" >
-
-            <ImageView
-                android:id="@+id/ImageView01"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginBottom="8dp"
-                android:scaleType="center"
-                android:src="@drawable/check_layout_cost" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/ImageView01"
-                android:scaleType="fitXY"
-                android:src="@drawable/layitem_line" />
-
-            <TextView
-                android:id="@+id/TextView01"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/ImageView01"
-                android:layout_alignTop="@+id/ImageView01"
-                android:layout_marginLeft="10dp"
-                android:layout_toLeftOf="@+id/CriButton01"
-                android:layout_toRightOf="@+id/ImageView01"
-                android:gravity="center_vertical"
-                android:text="@string/addbus_start"
-                android:textColor="#000"
-                android:textSize="14sp" />
-
-            <CheckBox
-                android:id="@+id/addbus_starting"
-                style="@style/CustomCheckboxTheme"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:paddingRight="5dp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/my_item_layout_package"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:paddingTop="8dp" >
-
-            <ImageView
-                android:id="@+id/ImageView03"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginBottom="8dp"
-                android:scaleType="center"
-                android:src="@drawable/check_layout_pack" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/ImageView03"
-                android:scaleType="fitXY"
-                android:src="@drawable/layitem_line" />
-
-            <TextView
-                android:id="@+id/TextView02"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/ImageView03"
-                android:layout_alignTop="@+id/ImageView03"
-                android:layout_marginLeft="10dp"
-                android:layout_toLeftOf="@+id/CriButton02"
-                android:layout_toRightOf="@+id/ImageView03"
-                android:gravity="center_vertical"
-                android:text="@string/addbus_callturn"
+                android:text="@string/skill_net6"
                 android:textColor="#000"
                 android:textSize="14sp" />
 
             <com.hall.view.CriButton
-                android:id="@+id/addbus_callturn"
+                android:id="@+id/skill_6"
                 criview:style="FILL"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -170,7 +77,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/RelativeLayout01"
+            android:id="@+id/RelativeLayout02"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="15dp"
@@ -178,36 +85,36 @@
             android:paddingTop="8dp" >
 
             <ImageView
-                android:id="@+id/ImageView02"
+                android:id="@+id/ImageView04"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginBottom="8dp"
                 android:scaleType="center"
-                android:src="@drawable/check_layout_func" />
+                android:src="@drawable/check_layout_language" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/ImageView02"
+                android:layout_below="@+id/ImageView04"
                 android:scaleType="fitXY"
                 android:src="@drawable/layitem_line" />
 
             <TextView
-                android:id="@+id/TextView04"
+                android:id="@+id/TextView05"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/ImageView02"
-                android:layout_alignTop="@+id/ImageView02"
+                android:layout_alignBottom="@+id/ImageView04"
+                android:layout_alignTop="@+id/ImageView04"
                 android:layout_marginLeft="10dp"
-                android:layout_toLeftOf="@+id/CriButton4"
-                android:layout_toRightOf="@+id/ImageView02"
+                android:layout_toLeftOf="@+id/CriButton05"
+                android:layout_toRightOf="@+id/ImageView04"
                 android:gravity="center_vertical"
-                android:text="@string/addbus_callwait"
+                android:text="@string/skill_net15"
                 android:textColor="#000"
                 android:textSize="14sp" />
 
             <com.hall.view.CriButton
-                android:id="@+id/addbus_callwait"
+                android:id="@+id/skill_net15"
                 criview:style="FILL"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -249,18 +156,25 @@
                 android:layout_toLeftOf="@+id/CriButton03"
                 android:layout_toRightOf="@+id/ImageView05"
                 android:gravity="center_vertical"
-                android:text="@string/addbus_hidden"
+                android:text="@string/skill_stand"
                 android:textColor="#000"
                 android:textSize="14sp" />
 
-            <CheckBox
-                android:id="@+id/addbus_hiddenphone"
-                style="@style/CustomCheckboxTheme"
+            <com.hall.view.CriButton
+                android:id="@+id/net_stand"
+                criview:style="FILL"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/TextView03"
+                android:layout_alignBottom="@+id/TextView03"
                 android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:paddingRight="5dp" />
+                android:background="@null"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="@string/cancle"
+                android:textColor="@color/default_white" />
         </RelativeLayout>
 
         <ImageView
@@ -269,6 +183,7 @@
             android:layout_gravity="bottom"
             android:scaleType="fitXY"
             android:src="@drawable/layitem_line" />
+
     </LinearLayout>
 
 </LinearLayout>

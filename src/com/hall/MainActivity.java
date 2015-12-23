@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.hall.fragment.TabItemFragmentHome;
 import com.hall.fragment.TabItemFragmentMy;
+import com.hall.ui.StartActivity;
 import com.hall.util.ActivityControl;
 import com.hall.view.BadgeView;
 import com.online.hall.R;
@@ -31,7 +32,7 @@ import cxh.voctex.utils.ToastUtil;
 public class MainActivity extends FragmentActivity {
 
 	private FragmentTabHost tabHost;
-	private String[] tabTexts = new String[] { "首页", "我的" };
+	private String[] tabTexts;
 	private int[] tabImgs = new int[] { R.drawable.selector_tab_item_icon0,
 			R.drawable.selector_tab_item_icon1, };
 	private Class<?>[] fragments = new Class[] { TabItemFragmentHome.class,
@@ -41,11 +42,14 @@ public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		StartActivity.switchLanguage(this, "it");
 
 		tabHost = (FragmentTabHost) findViewById(R.id.tab_fa_fth);
 		tabHost.setup(this, getSupportFragmentManager(),
 				R.id.tab_fa_maincontent);
-
+		tabTexts = new String[] {
+				getResources().getString(R.string.tab_bottom_home),
+				getResources().getString(R.string.tab_bottom_my) };
 		for (int i = 0; i < tabTexts.length; i++) {
 			TabSpec spec = tabHost.newTabSpec(tabTexts[i]).setIndicator(
 					getView(i));
@@ -98,7 +102,8 @@ public class MainActivity extends FragmentActivity {
 				&& KeyEvent.KEYCODE_BACK == keyCode) {
 			long currentTime = System.currentTimeMillis();
 			if ((currentTime - touchTime) >= waitTime) {
-				ToastUtil.showS(getBaseContext(), "再按一次退出", true);
+				ToastUtil.showS(getBaseContext(),
+						getResources().getString(R.string.back_app), true);
 				touchTime = currentTime;
 
 			} else {

@@ -1,17 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="tab_bottom_home">首页</string>
+    <string name="tab_bottom_my">我的</string>
+    <string name="check">查询</string>
+    <string name="open">开通</string>
+    <string name="cancle">取消</string>
+    <string name="home_paycost">充值缴费</string>
+    <string name="home_selfcheck">本机查询</string>
+    <string name="home_package">套餐资费</string>
+    <string name="home_wifi">WiFi设置</string>
+    <string name="home_dataall">数据漫游</string>
+    <string name="home_netset">上网设置</string>
+    <string name="home_skill">功能资费</string>
+    <string name="home_addbus">增值业务</string>
+    <string name="paycost_self">本机号码充值</string>
+    <string name="paycost_other">其他号码充值</string>
+    <string name="paycost_input_number">输入手机号码</string>
+    <string name="paycost_number">其他号码</string>
+    <string name="paycost_passwd">充值卡密码</string>
+    <string name="paycost_input_passwd">输入密码</string>
+    <string name="paycost_pay">充值</string>
+    <string name="check_self">查询本机号码</string>
+    <string name="check_yue">查询本机余额,免费分数及流量</string>
+    <string name="check_openpack">查询本机已开通套餐</string>
+    <string name="check_openskill">查询本机已开通功能</string>
+    <string name="check_language">查询本机语言设置</string>
+    <string name="check_gift">查询礼包</string>
+    <string name="package_userselect">适合用户:中意通 全球通</string>
+    <string name="package_unit">单位:欧元</string>
+    <string name="package_release">发布范围:中国 意大利</string>
+    <string name="package_packdes">套餐资费</string>
+    <string name="package_list_pack">套餐</string>
+    <string name="package_monthcost">月费</string>
+    <string name="package_netflow">上网流量</string>
+    <string name="package_numberselect">意大利所有号码及中国</string>
+    <string name="package_msn">短信</string>
+    <string name="package_costdes">扣费说明</string>
+    <string name="package_costdes2">资费说明</string>
+    <string name="package_open">开通套餐</string>
+    <string name="package_null">无</string>
+    <string name="wifi_select">开或关WiFi</string>
+    <string name="dataall_des">数据漫游介绍</string>
+    <string name="dataall_select">开关数据漫游</string>
+    <string name="skill_net6">虚拟网6</string>
+    <string name="skill_net15">上网流量15</string>
+    <string name="skill_stand">上网流量标准资费</string>
+    <string name="addbus_comecall">来电提醒</string>
+    <string name="addbus_start">开机提醒</string>
+    <string name="addbus_callturn">呼叫转移</string>
+    <string name="addbus_callwait">呼叫等待</string>
+    <string name="addbus_hidden">隐藏号码</string>
+    <string name="my_paycostcheck">充值记录查询</string>
     <string name="app_name">天天营业厅</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="tab_fa_item_text">主页</string>
-    
-    
-    
-    
-    
     <string name="title_alert">提示</string>
     <string name="cancel">cancel</string>
     <string name="ok">ok</string>
+    <string name="send_code">发送验证码</string>
+    <string name="user_phone">手机号码</string>
+    <string name="user_input_code">输入验证码</string>
+    <string name="user_passwd_hint">6-15位字母加数字</string>
+    <string name="user_login">登录</string>
+    <string name="user_logintxt">用户登录</string>
+    <string name="user_register">注册</string>
+    <string name="user_registertxt">注册用户</string>
+    <string name="user_forgetpw">忘记密码</string>
+    <string name="user_forgetpwtxt">找回密码</string>
+    <string name="back_app">再按一次退出</string>
 
 </resources>

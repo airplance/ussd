@@ -1,6 +1,13 @@
 package com.hall.bean;
 
-public class PackNetInfoBean {
+import java.io.Serializable;
+
+public class PackNetInfoBean implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private String gridname;
 
 	private String name;
@@ -10,6 +17,8 @@ public class PackNetInfoBean {
 	private String ussdcode;
 	private String costtype;
 	private String packdes;
+	private String time;
+	private String openCost;
 
 	// public PackNetInfoBean(String gridname, String name, String monthcost,
 	// String netflow, String minute, String ussdcode) {
@@ -20,6 +29,28 @@ public class PackNetInfoBean {
 	// this.minute = minute;
 	// this.ussdcode = ussdcode;
 	// }
+
+	public String getOpenCost() {
+		if (openCost == null) {
+			openCost = "5€";
+		}
+		return openCost;
+	}
+
+	public void setOpenCost(String openCost) {
+		this.openCost = openCost;
+	}
+
+	public String getTime() {
+		if (time == null) {
+			time = "2015-10-01";
+		}
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
 
 	public String getGridname() {
 		return gridname;

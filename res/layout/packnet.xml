@@ -45,12 +45,12 @@
                     android:orientation="vertical" >
 
                     <TextView
-                        android:id="@+id/textView1"
+                        android:id="@+id/packnet_top_title"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="bottom"
-                        android:text="中意通 全球通 上网语音套餐"
+                        android:text="@string/app_name"
                         android:textColor="#000"
                         android:textSize="16sp" />
 
@@ -60,7 +60,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="bottom"
-                        android:text="适合用户：中意通 全球通"
+                        android:text="@string/package_userselect"
                         android:textSize="15sp" />
 
                     <LinearLayout
@@ -73,7 +73,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:gravity="bottom|left"
-                            android:text="单位："
+                            android:text="@string/package_unit"
                             android:textSize="14sp" />
 
                         <TextView
@@ -83,7 +83,9 @@
                             android:gravity="bottom|left"
                             android:text="欧元"
                             android:textColor="@color/packnet_item_txt_pink"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+
                     </LinearLayout>
                 </LinearLayout>
 
@@ -108,7 +110,7 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/tishi"
                     android:gravity="center_vertical"
-                    android:text="发布范围：中国 意大利"
+                    android:text="@string/package_release"
                     android:textSize="15sp" />
 
                 <com.hall.view.PackNetGridView
@@ -149,11 +151,9 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
                     android:padding="3dp"
-                    android:text="套餐资费"
+                    android:text="@string/package_packdes"
                     android:textColor="#fff"
-                    android:textSize="15sp"
-                    
-                     />
+                    android:textSize="15sp" />
 
                 <com.hall.view.PackNetListView
                     android:id="@+id/packnet_list"
@@ -185,18 +185,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
-                    android:text="扣费说明"
+                    android:text="@string/package_costdes"
                     android:textColor="#fff"
-                    android:textSize="15sp"
-                    
-                     />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/packnet_costtype"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="1：当月开通，次月1号理解扣费生效。\n2：中意通21 29 39三种套餐扣费方式是当月20号开通，次月20号扣费"
+                    android:text="@string/app_name"
                     android:textColor="#000"
                     android:textSize="13sp" />
 
@@ -220,19 +218,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
-                    android:text="资费说明"
+                    android:text="@string/package_costdes2"
                     android:textColor="#fff"
-                    android:textSize="15sp"
-                    
-                     />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/packnet_packdes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:lineSpacingExtra="3dp"
                     android:layout_marginTop="8dp"
-                    android:text="1：当月开通，次月1号理解扣费生效。\n2：中意通21 29 39三种套餐扣费方式是当月20号开通，次月20号扣费"
+                    android:lineSpacingExtra="3dp"
+                    android:text="@string/app_name"
                     android:textColor="#000"
                     android:textSize="13sp" />
 
@@ -245,32 +241,5 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp" >
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="fitXY"
-            android:src="@drawable/layitem_line" />
-
-        <com.hall.view.CriButton
-            android:id="@+id/packnet_ok"
-            criview:style="FILL"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView4"
-            android:layout_margin="8dp"
-            android:background="@null"
-            android:padding="10dp"
-            android:text="开通套餐"
-            android:textColor="@color/default_white"
-            android:textSize="17sp" />
-
-    </RelativeLayout>
 
 </LinearLayout>

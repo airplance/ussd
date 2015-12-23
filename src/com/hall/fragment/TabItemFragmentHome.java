@@ -79,7 +79,8 @@ public class TabItemFragmentHome extends Fragment {
 			view = (ViewGroup) inflater.inflate(
 					R.layout.tab_item_fragment_main, container, false);
 			TopLayout top = (TopLayout) view.findViewById(TopLayout.TOPID);
-			top.setTitleAndBack("天天营业厅", View.INVISIBLE, null);
+			top.setTitleAndBack(getResources().getString(R.string.app_name),
+					View.INVISIBLE, null);
 			ViewUtils.inject(this, view);
 
 			home_item_pay.setOnClickListener(ItemOnclick);
@@ -188,7 +189,7 @@ public class TabItemFragmentHome extends Fragment {
 			case R.id.home_item_check:
 				intent.setClass(mActivity, ParentActivity.class);
 				intent.putExtra("name", CheckFragment.TAG);
-				
+
 				break;
 			case R.id.home_item_pack:
 				intent.setClass(mActivity, ParentActivity.class);
@@ -204,10 +205,11 @@ public class TabItemFragmentHome extends Fragment {
 				break;
 			case R.id.home_item_net:
 				ToastUtil.showS(mActivity, "跳转到APN");
-//				intent.setClass(mActivity, OtherActivity.class);
+				// intent.setClass(mActivity, OtherActivity.class);
 				break;
 			case R.id.home_item_skill:
 				intent.setClass(mActivity, ParentActivity.class);
+				intent.putExtra("name", SkillFragment.TAG);
 				break;
 			case R.id.home_item_add:
 				intent.setClass(mActivity, ParentActivity.class);

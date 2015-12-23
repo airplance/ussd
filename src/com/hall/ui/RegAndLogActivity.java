@@ -18,12 +18,13 @@ import android.widget.LinearLayout;
 
 import com.hall.MainActivity;
 import com.hall.util.BaseActivity;
+import com.hall.view.CriButton;
 import com.online.hall.R;
 
 public class RegAndLogActivity extends BaseActivity {
 	private ArrayList<View> viewContainter = new ArrayList<View>();
 	private ViewPager Pager;
-	private Button reg, log;
+	private CriButton reg, log;
 	private final int[] imgsRid = { R.drawable.splash,
 			R.drawable.home_left_one, R.drawable.home_paycharge };
 
@@ -33,8 +34,10 @@ public class RegAndLogActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.regandlog);
 		Pager = (ViewPager) findViewById(R.id.regandlog_viewpager);
-		reg = (Button) findViewById(R.id.regandlog_reg);
-		log = (Button) findViewById(R.id.regandlog_log);
+		reg = (CriButton) findViewById(R.id.regandlog_reg);
+		log = (CriButton) findViewById(R.id.regandlog_log);
+		reg.setCheckLogin(false);
+		log.setCheckLogin(false);
 		log.setOnClickListener(twoO);
 		reg.setOnClickListener(twoO);
 		for (int i = 0; i < 1; i++) {

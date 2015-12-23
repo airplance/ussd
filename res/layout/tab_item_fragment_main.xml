@@ -58,7 +58,7 @@
                         android:drawableTop="@drawable/home_paycharge"
                         android:gravity="center_horizontal"
                         android:padding="5dp"
-                        android:text="充值缴费"
+                        android:text="@string/home_paycost"
                         android:textColor="#000" />
 
                     <TextView
@@ -71,7 +71,7 @@
                         android:drawableTop="@drawable/home_check"
                         android:gravity="center_horizontal"
                         android:padding="5dp"
-                        android:text="本机查询"
+                        android:text="@string/home_selfcheck"
                         android:textColor="#000" />
 
                     <TextView
@@ -83,7 +83,7 @@
                         android:drawableTop="@drawable/home_package"
                         android:gravity="center_horizontal"
                         android:padding="5dp"
-                        android:text="套餐资费"
+                        android:text="@string/home_package"
                         android:textColor="#000" />
                 </LinearLayout>
 
@@ -103,7 +103,7 @@
                         android:drawableTop="@drawable/home_wifiset"
                         android:gravity="center_horizontal"
                         android:padding="5dp"
-                        android:text="WIFI设置"
+                        android:text="@string/home_wifi"
                         android:textColor="#000" />
 
                     <TextView
@@ -116,7 +116,7 @@
                         android:drawableTop="@drawable/home_dataall"
                         android:gravity="center_horizontal"
                         android:padding="5dp"
-                        android:text="数据漫游"
+                        android:text="@string/home_dataall"
                         android:textColor="#000" />
 
                     <TextView
@@ -128,7 +128,7 @@
                         android:drawableTop="@drawable/home_netset"
                         android:gravity="center_horizontal"
                         android:padding="5dp"
-                        android:text="上网设置"
+                        android:text="@string/home_netset"
                         android:textColor="#000" />
                 </LinearLayout>
 
@@ -147,7 +147,7 @@
                         android:drawableTop="@drawable/home_skill"
                         android:gravity="center_horizontal"
                         android:padding="5dp"
-                        android:text="功能资费"
+                        android:text="@string/home_skill"
                         android:textColor="#000" />
 
                     <TextView
@@ -160,7 +160,7 @@
                         android:drawableTop="@drawable/home_addbus"
                         android:gravity="center_horizontal"
                         android:padding="5dp"
-                        android:text="增值业务"
+                        android:text="@string/home_addbus"
                         android:textColor="#000" />
 
                     <TextView

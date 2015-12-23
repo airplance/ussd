@@ -3,6 +3,8 @@ package com.hall.fragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.crypto.Mac;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,6 +32,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.hall.bean.PackNetInfoBean;
 import com.hall.ui.PackNetListAdapter;
+import com.hall.util.InternetConn;
 import com.hall.view.CustomDialog;
 import com.hall.view.PackNetGridView;
 import com.hall.view.PackNetListView;
@@ -52,14 +55,16 @@ public class PackageFragment extends BaseFragment {
 	public static final int HEARVIEWZERO = 0, HEARVIEWONE = 1, HEARVIEWTWO = 2,
 			HEARVIEWTHREE = 3;
 
-	@ViewInject(R.id.packnet_ok)
-	private Button packnet_ok;
+	// @ViewInject(R.id.packnet_ok)
+	// private Button packnet_ok;
+	//
+	// @OnClick(R.id.packnet_ok)
+	// public void OKOnClick(View v) {
+	// builder.create().show();
+	// }
 
-	@OnClick(R.id.packnet_ok)
-	public void OKOnClick(View v) {
-		builder.create().show();
-	}
-
+	@ViewInject(R.id.packnet_top_title)
+	private TextView top_title;
 	@ViewInject(R.id.packnet_packdes)
 	private TextView packDes;
 	@ViewInject(R.id.packnet_costtype)
@@ -88,24 +93,33 @@ public class PackageFragment extends BaseFragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
+
 		if (mViewGroup == null) {
 			mViewGroup = (ViewGroup) inflater.inflate(R.layout.packnet,
 					container, false);
 			ViewUtils.inject(this, mViewGroup);
-			dialog = new ProgressDialog(mActivity,
-					ProgressDialog.STYLE_HORIZONTAL);
-			dialog.show();
-			setTitleAndBack("上网套餐", View.VISIBLE, null);
-			infoListView.addHeaderView(hearView = getList1HearView());
-			TextList1Data();
-			initDialog();
+			setTitleAndBack(
+					mActivity.getResources().getString(R.string.home_package),
+					View.VISIBLE, null);
+			if (!InternetConn.isNetWorking(mActivity)) {
+				ToastUtil.showS(mActivity, "请连接网络");
+			} else {
+				dialog = new ProgressDialog(mActivity,
+						ProgressDialog.STYLE_HORIZONTAL);
+				dialog.show();
+				infoListView.addHeaderView(hearView = getList1HearView());
+				TextList1Data();
+				initDialog();
+			}
 		} else {
 			ViewGroup viewGroup = (ViewGroup) mViewGroup.getParent();
 			if (viewGroup != null) {
 				viewGroup.removeAllViewsInLayout();
 			}
 		}
-		setTitleAndBack("上网套餐", View.VISIBLE, null);
+		setTitleAndBack(
+				mActivity.getResources().getString(R.string.home_package),
+				View.VISIBLE, null);
 		return mViewGroup;
 	}
 
@@ -113,16 +127,21 @@ public class PackageFragment extends BaseFragment {
 		// TODO Auto-generated method stub
 		builder = new CustomDialog.Builder(mActivity);
 		builder.setMessage("开通费 5€，月费 XX,到期日期 XX");
-		builder.setTitle("开通套餐");
-		builder.setPositiveButton("开通", new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int which) {
-				dialog.dismiss();
-				// 设置你的操作事项
+		builder.setTitle(mActivity.getResources().getString(
+				R.string.package_open));
 
-			}
-		});
+		builder.setPositiveButton(
+				mActivity.getResources().getString(R.string.open),
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						dialog.dismiss();
+						// 设置你的操作事项
 
-		builder.setNegativeButton("取消",
+					}
+				});
+
+		builder.setNegativeButton(
+				mActivity.getResources().getString(R.string.cancle),
 				new android.content.DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
 						dialog.dismiss();
@@ -163,6 +182,8 @@ public class PackageFragment extends BaseFragment {
 			PackNetInfoBean bean = mList.get(selectGidIndex).get(0);
 			costType.setText(bean.getCosttype());
 			packDes.setText(bean.getPackdes());
+			top_title.setText(bean.getGridname());
+
 		};
 	};
 
@@ -226,34 +247,6 @@ public class PackageFragment extends BaseFragment {
 	private void TextList1Data() {
 		HttpUtils http = new HttpUtils();
 		http.send(HttpMethod.GET, dataUrl, callBack);
-		// new Thread(new Runnable() {
-		//
-		// @Override
-		// public void run() {
-		// // TODO Auto-generated method stub
-		// List<List<PackNetInfoBean>> mList = new
-		// ArrayList<List<PackNetInfoBean>>();
-		// for (int a = 0; a < 4; a++) {
-		// List<PackNetInfoBean> t = new ArrayList<PackNetInfoBean>();
-		// for (int i = 0; i < 6; i++) {
-		// String gridname = "中意通 上网流量+语音套餐";
-		// String name = "中意通" + a + "9";
-		// String monthcost = a + "9" + "欧元";
-		// String netflow = "免费" + a + "0GB";
-		// String minute = "免费" + a + "000分钟";
-		// PackNetInfoBean b0 = new PackNetInfoBean(gridname,
-		// name, monthcost, netflow, minute, "*102*93*1#");
-		// t.add(b0);
-		// }
-		// mList.add(t);
-		// }
-		// Message msg = new Message();
-		// msg.what = -1;
-		// msg.obj = mList;
-		// mHandler.sendMessage(msg);
-		// }
-		// }).start();
-
 	}
 
 	/**
@@ -262,7 +255,12 @@ public class PackageFragment extends BaseFragment {
 	 * @return
 	 */
 	private LinearLayout getList1HearView() {
-		String[] str = { "套餐", "月费", "上网流量", "意大利、中国号码" };
+		String[] str = {
+				mActivity.getResources().getString(R.string.package_list_pack),
+				mActivity.getResources().getString(R.string.package_monthcost),
+				mActivity.getResources().getString(R.string.package_netflow),
+				mActivity.getResources().getString(
+						R.string.package_numberselect) };
 		float[] weight = { 1.0f, 1.0f, 0.98f, 0.8f };
 		int bgColor = getResources().getColor(R.color.default_blue);
 		LinearLayout l = new LinearLayout(mActivity);

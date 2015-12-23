@@ -6,7 +6,6 @@
     android:background="#fff"
     android:orientation="vertical" >
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -53,15 +52,15 @@
                 android:layout_alignBottom="@+id/imageView2"
                 android:layout_alignTop="@+id/imageView2"
                 android:layout_marginLeft="10dp"
-                android:layout_toLeftOf="@+id/button1"
+                android:layout_toLeftOf="@+id/dataall_des"
                 android:layout_toRightOf="@+id/imageView2"
                 android:gravity="center_vertical"
-                android:text="数据漫游介绍"
+                android:text="@string/dataall_des"
                 android:textColor="#000"
                 android:textSize="14sp" />
 
             <com.hall.view.CriButton
-                android:id="@+id/button1"
+                android:id="@+id/dataall_des"
                 criview:style="FILL"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -72,7 +71,7 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingTop="5dp"
-                android:text="查询"
+                android:text="@string/check"
                 android:textColor="@color/default_white" />
         </RelativeLayout>
 
@@ -100,14 +99,15 @@
                 android:layout_alignBottom="@+id/ImageView05"
                 android:layout_alignTop="@+id/ImageView05"
                 android:layout_marginLeft="10dp"
-                android:layout_toLeftOf="@+id/CriButton03"
+                android:layout_toLeftOf="@+id/dataall_select"
                 android:layout_toRightOf="@+id/ImageView05"
                 android:gravity="center_vertical"
-                android:text="开关数据漫游"
+                android:text="@string/dataall_select"
                 android:textColor="#000"
                 android:textSize="14sp" />
 
             <CheckBox
+                android:id="@+id/dataall_select"
                 style="@style/CustomCheckboxTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -122,7 +122,6 @@
             android:layout_gravity="bottom"
             android:scaleType="fitXY"
             android:src="@drawable/layitem_line" />
-
     </LinearLayout>
 
 </LinearLayout>

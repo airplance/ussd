@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.hall.MainActivity;
 import com.hall.util.BaseActivity;
+import com.hall.view.CriButton;
 import com.hall.view.TopLayout;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
@@ -17,7 +18,7 @@ public class LoginActivity extends BaseActivity {
 	@ViewInject(R.id.login_findpass)
 	private TextView find;
 	@ViewInject(R.id.login_ok)
-	private TextView ok;
+	private CriButton ok;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +27,11 @@ public class LoginActivity extends BaseActivity {
 		setContentView(R.layout.login);
 		ViewUtils.inject(this);
 		TopLayout top = (TopLayout) findViewById(TopLayout.TOPID);
-		top.setTitleAndBack("用户登录", View.VISIBLE, null);
+		top.setTitleAndBack(getResources().getString(R.string.user_logintxt),
+				View.VISIBLE, null);
 		find.setOnClickListener(OnClick);
 		ok.setOnClickListener(OnClick);
-
+		ok.setCheckLogin(false);
 	}
 
 	private OnClickListener OnClick = new OnClickListener() {

@@ -56,7 +56,7 @@
                         android:layout_toRightOf="@+id/imageView2"
                         android:background="@color/default_white"
                         android:ems="10"
-                        android:hint="手机号码"
+                        android:hint="@string/user_phone"
                         android:paddingLeft="8dp"
                         android:textSize="13sp" />
                 </RelativeLayout>
@@ -84,7 +84,7 @@
                         android:layout_toRightOf="@+id/ImageView02"
                         android:background="@color/default_white"
                         android:ems="10"
-                        android:hint="输入验证码"
+                        android:hint="@string/user_input_code"
                         android:paddingLeft="8dp"
                         android:textSize="13sp" />
 
@@ -104,11 +104,11 @@
                             android:layout_height="match_parent"
                             android:background="@null"
                             android:padding="3dp"
-                            android:text="发送验证码"
+                            android:text="@string/send_code"
                             android:textColor="@color/default_white"
                             android:textSize="14sp"
-                            
                             criview:corder="5" />
+
                     </LinearLayout>
                 </RelativeLayout>
 
@@ -136,7 +136,7 @@
                         android:layout_toRightOf="@+id/ImageView01"
                         android:background="@color/default_white"
                         android:ems="10"
-                        android:hint="6-15位字母加数字"
+                        android:hint="@string/user_passwd_hint"
                         android:paddingLeft="8dp"
                         android:textSize="13sp" />
                 </RelativeLayout>
@@ -151,11 +151,10 @@
             android:layout_marginBottom="8dp"
             android:background="@null"
             android:padding="8dp"
-            android:text="确定"
+            android:text="@string/ok"
             android:textColor="@color/default_white"
-            android:textSize="17sp"
-            
-             />
+            android:textSize="17sp" />
+
     </RelativeLayout>
 
 </LinearLayout>

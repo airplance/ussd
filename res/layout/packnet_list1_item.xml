@@ -18,7 +18,7 @@
             android:layout_weight="1"
             android:background="@color/packnet_item_txt_bg"
             android:gravity="center"
-            android:text="中意通39"
+            android:text="@string/app_name"
             android:textSize="13sp" />
 
         <TextView
@@ -29,7 +29,7 @@
             android:layout_weight="1"
             android:background="@color/packnet_item_txt_bg"
             android:gravity="center"
-            android:text="39欧元" />
+            android:text="@string/app_name" />
 
         <TextView
             android:id="@+id/packnet_list_item_netflow"
@@ -39,8 +39,7 @@
             android:layout_weight="0.98"
             android:background="@color/packnet_item_txt_bg"
             android:gravity="center"
-            android:text="免费10GB"
-            android:textColor="@color/default_blue" />
+            android:text="@string/app_name" />
 
         <TextView
             android:id="@+id/packnet_list_item_minute"
@@ -51,7 +50,7 @@
             android:layout_weight="0.8"
             android:background="@color/packnet_item_txt_bg"
             android:gravity="center"
-            android:text="免费1000分钟" />
+            android:text="@string/app_name" />
     </LinearLayout>
 
 </LinearLayout>

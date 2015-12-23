@@ -57,7 +57,9 @@ public class TabItemFragmentMy extends Fragment {
 			img = (CircleImageView) view.findViewById(R.id.my_img);
 			ViewUtils.inject(this, view);
 			TopLayout top = (TopLayout) view.findViewById(TopLayout.TOPID);
-			top.setTitleAndBack("我的", View.INVISIBLE, null);
+			top.setTitleAndBack(
+					mActivity.getResources().getString(R.string.tab_bottom_my),
+					View.INVISIBLE, null);
 			my_item_layout_listcost.setOnClickListener(itemsO);
 			my_item_layout_flow.setOnClickListener(itemsO);
 			my_item_layout_package.setOnClickListener(itemsO);

@@ -6,7 +6,6 @@
     android:background="#fff"
     android:orientation="vertical" >
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="本机号码充值"
+                android:text="@string/paycost_self"
                 android:textColor="@color/default_blue"
                 android:textSize="19sp" />
 
@@ -79,9 +78,9 @@
                             android:background="@color/default_white"
                             android:ems="10"
                             android:hint="ase sdf 是大法官"
+                            android:inputType="number"
                             android:padding="5dp"
                             android:textSize="13sp" />
-
                     </LinearLayout>
                 </RelativeLayout>
 
@@ -97,7 +96,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="left|center_vertical"
                         android:padding="5dp"
-                        android:text="充值卡密码："
+                        android:text="@string/paycost_passwd"
                         android:textColor="#000"
                         android:textSize="15sp" />
 
@@ -112,22 +111,33 @@
                         android:background="@color/default_blue" >
 
                         <EditText
-                            android:id="@+id/EditText01"
+                            android:id="@+id/paycost_input1"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_margin="0.5dp"
                             android:layout_weight="1"
                             android:background="@color/default_white"
                             android:ems="10"
-                            android:hint="输入密码"
+                            android:hint="@string/paycost_input_passwd"
+                            android:inputType="number"
                             android:padding="5dp"
                             android:textSize="13sp" >
-
                         </EditText>
                     </LinearLayout>
                 </RelativeLayout>
-            </LinearLayout>
 
+                <com.hall.view.CriButton
+                    android:id="@+id/paycost_ok1"
+                    criview:style="FILL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@null"
+                    android:padding="8dp"
+                    android:text="@string/paycost_pay"
+                    android:textColor="#fff"
+                    android:textSize="17sp" />
+            </LinearLayout>
         </RelativeLayout>
 
         <RelativeLayout
@@ -140,7 +150,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="其他号码充值"
+                android:text="@string/paycost_other"
                 android:textColor="@color/default_blue"
                 android:textSize="19sp" />
 
@@ -171,7 +181,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="left|center_vertical"
                         android:padding="5dp"
-                        android:text="充值卡号码："
+                        android:text="@string/paycost_number"
                         android:textColor="#000"
                         android:textSize="15sp" />
 
@@ -186,14 +196,15 @@
                         android:background="@color/default_blue" >
 
                         <EditText
-                            android:id="@+id/EditText02"
+                            android:id="@+id/paycost_input2"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_margin="0.5dp"
                             android:layout_weight="1"
                             android:background="@color/default_white"
                             android:ems="10"
-                            android:hint="输入手机号码"
+                            android:hint="@string/paycost_input_number"
+                            android:inputType="number"
                             android:padding="5dp"
                             android:textSize="13sp" />
                     </LinearLayout>
@@ -211,7 +222,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="left|center_vertical"
                         android:padding="5dp"
-                        android:text="充值卡密码："
+                        android:text="@string/paycost_passwd"
                         android:textColor="#000"
                         android:textSize="15sp" />
 
@@ -226,14 +237,15 @@
                         android:background="@color/default_blue" >
 
                         <EditText
-                            android:id="@+id/EditText03"
+                            android:id="@+id/paycost_input2_pw"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_margin="0.5dp"
                             android:layout_weight="1"
                             android:background="@color/default_white"
                             android:ems="10"
-                            android:hint="输入密码"
+                            android:hint="@string/paycost_input_passwd"
+                            android:inputType="number"
                             android:padding="5dp"
                             android:textSize="13sp" />
                     </LinearLayout>
@@ -242,17 +254,16 @@
         </RelativeLayout>
 
         <com.hall.view.CriButton
-            android:id="@+id/button1"
+            android:id="@+id/paycost_ok2"
             criview:style="FILL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@null"
             android:padding="8dp"
-            android:text="充值"
+            android:text="@string/paycost_pay"
             android:textColor="#fff"
             android:textSize="17sp" />
-
     </LinearLayout>
 
 </LinearLayout>
