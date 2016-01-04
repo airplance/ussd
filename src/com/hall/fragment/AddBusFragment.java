@@ -1,6 +1,8 @@
 package com.hall.fragment;
 
 import android.os.Bundle;
+import android.provider.Settings;
+import android.provider.Settings.SettingNotFoundException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,7 +62,8 @@ public class AddBusFragment extends BaseFragment {
 				viewGroup.removeAllViewsInLayout();
 			}
 		}
-		setTitleAndBack(mActivity.getResources().getString(R.string.home_addbus), View.VISIBLE, null);
+		setTitleAndBack(mActivity.getResources()
+				.getString(R.string.home_addbus), View.VISIBLE, null);
 		return mViewGroup;
 	}
 
@@ -82,7 +85,16 @@ public class AddBusFragment extends BaseFragment {
 				CallUssd.Call(mActivity, codes);
 				break;
 			case R.id.addbus_hiddenphone:
-
+				try {
+					int int1 = Settings.Secure.getInt(
+							mActivity.getContentResolver(), "data_roaming");
+					Settings.Secure.setLocationProviderEnabled(
+							mActivity.getContentResolver(), "data_roaming",
+							true);
+				} catch (SettingNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				break;
 			}
 		}

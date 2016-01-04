@@ -181,38 +181,33 @@ public class TabItemFragmentHome extends Fragment {
 			// TODO Auto-generated method stub
 			Intent intent = new Intent();
 			int id = v.getId();
+			intent.setClass(mActivity, ParentActivity.class);
 			switch (id) {
 			case R.id.home_item_pay:
-				intent.setClass(mActivity, ParentActivity.class);
 				intent.putExtra("name", PayCostFragment.TAG);
 				break;
 			case R.id.home_item_check:
-				intent.setClass(mActivity, ParentActivity.class);
 				intent.putExtra("name", CheckFragment.TAG);
 
 				break;
 			case R.id.home_item_pack:
-				intent.setClass(mActivity, ParentActivity.class);
 				intent.putExtra("name", PackageFragment.TAG);
 				break;
 			case R.id.home_item_wifi:
-				intent.setClass(mActivity, ParentActivity.class);
 				intent.putExtra("name", WifiFragment.TAG);
 				break;
 			case R.id.home_item_data:
-				intent.setClass(mActivity, ParentActivity.class);
 				intent.putExtra("name", DataAllFragment.TAG);
 				break;
 			case R.id.home_item_net:
 				ToastUtil.showS(mActivity, "跳转到APN");
-				// intent.setClass(mActivity, OtherActivity.class);
+				intent.putExtra("name", ApnFragment.TAG);
 				break;
+
 			case R.id.home_item_skill:
-				intent.setClass(mActivity, ParentActivity.class);
 				intent.putExtra("name", SkillFragment.TAG);
 				break;
 			case R.id.home_item_add:
-				intent.setClass(mActivity, ParentActivity.class);
 				intent.putExtra("name", AddBusFragment.TAG);
 				break;
 
