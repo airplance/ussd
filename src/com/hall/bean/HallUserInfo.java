@@ -36,11 +36,11 @@ public class HallUserInfo {
 
 	public static boolean isPhone() {
 		HallUserInfo info = getInstance();
-		if (info.getPhone() != null && !info.getPhone().equals("")) {
+//		if (info.getPhone() != null && !info.getPhone().equals("")) {
 			return true;
-		} else {
-			return false;
-		}
+//		} else {
+//			return false;
+//		}
 
 	}
 }
